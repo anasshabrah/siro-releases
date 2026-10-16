@@ -1,0 +1,29 @@
+رخصة استخدام برنامج سيرو (Siro)
+الإصدار 1 · حقوق النشر © 2026 Anass Habrah. جميع الحقوق محفوظة.
+
+1. المنح: يحق لك تثبيت سيرو واستخدامه مجاناً، على أي عدد من الأجهزة، لأي نشاط شخصي أو تجاري.
+2. التوزيع: يحق لك نسخ ملف التثبيت الأصلي ومشاركته مع غيرك مجاناً، بشرط ألا يُعدَّل وألا يُطلب مقابله أي مبلغ.
+3. ما يُمنع: تعديل البرنامج أو أي جزء منه، أو تفكيكه أو استخراج الكود منه أو إعادة بنائه، أو إزالة اسم سيرو أو حقوق النشر أو استبدالها، أو بيع البرنامج أو تأجيره أو تقديمه كخدمة مدفوعة، أو نشر نسخة معدّلة أو مشتقة منه.
+4. الملكية: البرنامج ملك صاحب الحقوق ويبقى كذلك. هذه الرخصة تمنحك حق الاستخدام فقط ولا تنقل إليك أي ملكية.
+5. بياناتك: كل ما تُدخله في البرنامج ملكك وحدك، ويُحفظ على أجهزتك. لا يُرسل البرنامج بياناتك إلى صاحب الحقوق. يتصل البرنامج بالإنترنت لفحص التحديثات، وللمزايا التي تفعّلها بنفسك فقط.
+6. التحديثات: قد ينزّل البرنامج تحديثات تلقائياً حين يتصل بالإنترنت، وتخضع التحديثات لهذه الرخصة.
+7. بلا ضمان: يُقدَّم البرنامج «كما هو» دون أي ضمان. أنت مسؤول عن مراجعة حساباتك وأخذ نسخ احتياطية منتظمة.
+8. حدود المسؤولية: لا يتحمل صاحب الحقوق أي مسؤولية عن خسارة بيانات أو أرباح أو أي ضرر ينتج عن استخدام البرنامج أو تعذّر استخدامه.
+9. الإنهاء: تنتهي هذه الرخصة تلقائياً إذا خالفت أي بند فيها، وعندها يجب أن تتوقف عن استخدام البرنامج.
+10. النص المعتمد: النص العربي هو المعتمد عند أي اختلاف مع الترجمة الإنجليزية.
+
+---
+
+Siro licence agreement
+Version 1 · Copyright © 2026 Anass Habrah. All rights reserved.
+
+1. Grant: you may install and use Siro free of charge, on any number of devices, for any personal or business purpose.
+2. Distribution: you may copy and share the original, unmodified installer with others, free of charge.
+3. Restrictions: you may not modify Siro or any part of it; decompile, extract or rebuild its code; remove or replace the Siro name or copyright notices; sell, rent or offer it as a paid service; or publish a modified or derived version.
+4. Ownership: Siro is and remains the property of the copyright holder. This licence grants a right of use only.
+5. Your data: everything you enter is yours and stays on your devices. Siro does not send your data to the copyright holder. It goes online only to check for updates and for features you turn on yourself.
+6. Updates: Siro may download updates automatically when online. Updates are covered by this licence.
+7. No warranty: Siro is provided "as is", without warranty of any kind. You are responsible for checking your accounts and keeping regular backups.
+8. Limitation of liability: the copyright holder is not liable for any loss of data or profit, or any damage arising from the use of, or inability to use, Siro.
+9. Termination: this licence ends automatically if you breach any of its terms, and you must then stop using Siro.
+10. Governing text: the Arabic text prevails over this English translation.
