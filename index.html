@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>سيرو: برنامج مجاني لإدارة المحل</title>
+<meta name="description" content="سيرو برنامج مجاني لإدارة المحل والشركة على ويندوز: مبيعات ونقطة بيع، مخزون، مشتريات، محاسبة وتقارير. يعمل بلا إنترنت وبياناتك تبقى عندك.">
+<link rel="canonical" href="https://anasshabrah.github.io/siro-releases/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="سيرو">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:url" content="https://anasshabrah.github.io/siro-releases/">
+<meta property="og:title" content="سيرو: برنامج المحل كله، مجاناً">
+<meta property="og:description" content="مبيعات ومخزون ومحاسبة ونقطة بيع على ويندوز. يعمل بلا إنترنت، مجاني بالكامل.">
+<meta property="og:image" content="https://anasshabrah.github.io/siro-releases/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="فاتورة سيرو: كل أقسام البرنامج بصفر ليرة، مختومة بكلمة مجاني">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="سيرو: برنامج المحل كله، مجاناً">
+<meta name="twitter:description" content="مبيعات ومخزون ومحاسبة ونقطة بيع على ويندوز. يعمل بلا إنترنت، مجاني بالكامل.">
+<meta name="twitter:image" content="https://anasshabrah.github.io/siro-releases/og.png">
+<meta name="theme-color" content="#2f5d3a">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="img/icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Reem+Kufi:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #16201b;      /* text: deep green-black, never pure black */
+    --muted: #5f6b64;
+    --ground: #eef2ee;   /* page: cool sage paper */
+    --paper: #ffffff;    /* receipts and panels */
+    --olive: #2f5d3a;    /* Damascene olive: actions */
+    --olive-deep: #23472c;
+    --line: #d5ddd7;
+    --stamp: #c0392b;    /* used once: the stamp */
+    --wa: #1f7a4a;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--ground); color: var(--ink); font: 400 18px/1.75 "IBM Plex Sans Arabic", system-ui, sans-serif; }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: var(--olive); }
+  :focus-visible { outline: 3px solid var(--olive); outline-offset: 3px; border-radius: 6px; }
+  .wrap { width: min(1120px, 100% - 32px); margin-inline: auto; }
+  h1, h2 { font-family: "Reem Kufi", "IBM Plex Sans Arabic", sans-serif; font-weight: 700; line-height: 1.15; margin: 0; }
+  h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 18px; }
+  p { margin: 0; }
+
+  /* header */
+  .top { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-family: "Reem Kufi", sans-serif; font-size: 28px; font-weight: 700; }
+  .brand img { width: 40px; height: 40px; border-radius: 10px; }
+  .top nav { display: flex; gap: 22px; font-size: 16px; }
+  .top nav a { color: var(--ink); text-decoration: none; }
+  .top nav a:hover { color: var(--olive); }
+
+  /* hero */
+  .hero { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: center; padding: 36px 0 72px; }
+  .hero h1 { font-size: clamp(44px, 7vw, 82px); }
+  .hero .lead { font-size: clamp(19px, 2.2vw, 22px); color: var(--muted); margin-top: 18px; max-width: 34ch; }
+  .cta { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .btn { display: inline-flex; align-items: center; gap: 12px; background: var(--olive); color: #fff; text-decoration: none; font-weight: 600; font-size: 20px; padding: 16px 28px; border-radius: 14px; box-shadow: 0 6px 0 var(--olive-deep); transition: transform .12s, box-shadow .12s; }
+  .btn:hover { background: var(--olive-deep); }
+  .btn:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--olive-deep); }
+  .btn svg { width: 22px; height: 22px; flex: none; }
+  .meta { font-size: 15px; color: var(--muted); }
+  .meta span[dir] { unicode-bidi: isolate; }
+
+  /* the receipt: the one loud thing on the page */
+  .receipt-stage { position: relative; display: flex; justify-content: center; }
+  .slot { position: absolute; top: -10px; width: 360px; max-width: 92%; height: 14px; border-radius: 8px; background: var(--ink); opacity: .85; }
+  .receipt { position: relative; width: 340px; max-width: 88%; background: var(--paper); padding: 30px 28px 42px; box-shadow: 0 22px 40px rgba(22, 32, 27, .14);
+    -webkit-mask: radial-gradient(circle 8px at 50% 100%, #0000 98%, #000) 0 0 / 20px 100% repeat-x; mask: radial-gradient(circle 8px at 50% 100%, #0000 98%, #000) 0 0 / 20px 100% repeat-x;
+    transform-origin: top center; animation: print 1.6s cubic-bezier(.3, .7, .3, 1) .2s both; }
+  @keyframes print { from { clip-path: inset(0 0 100% 0); transform: translateY(-14px); } to { clip-path: inset(0 0 0 0); transform: translateY(0); } }
+  .r-head { text-align: center; border-bottom: 2px dashed var(--line); padding-bottom: 12px; margin-bottom: 12px; }
+  .r-head b { font-family: "Reem Kufi", sans-serif; font-size: 28px; display: block; line-height: 1.3; }
+  .r-head small { font-size: 14px; color: var(--muted); }
+  .r-row { display: flex; align-items: baseline; gap: 8px; font-size: 17px; padding: 3px 0; }
+  .r-row i { flex: 1; border-bottom: 2px dotted var(--line); transform: translateY(-5px); }
+  .r-row em { font-style: normal; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .r-total { display: flex; justify-content: space-between; border-top: 3px solid var(--ink); margin-top: 12px; padding-top: 10px; font-weight: 600; font-size: 21px; }
+  .r-foot { text-align: center; font-size: 13px; color: var(--muted); margin-top: 14px; }
+  .stamp { position: absolute; left: 6px; top: 46%; transform: rotate(-12deg) scale(1); border: 4px solid var(--stamp); color: var(--stamp); border-radius: 10px; padding: 0 16px; font: 700 38px/1.3 "Reem Kufi", sans-serif; opacity: .9;
+    animation: stamp .35s cubic-bezier(.2, 1.6, .4, 1) 1.9s both; }
+  @keyframes stamp { from { opacity: 0; transform: rotate(-12deg) scale(1.8); } to { opacity: .9; transform: rotate(-12deg) scale(1); } }
+
+  /* sections */
+  section { padding: 64px 0; }
+  .shots { background: var(--paper); border-block: 1px solid var(--line); }
+  .shots .intro { color: var(--muted); max-width: 60ch; margin-bottom: 30px; }
+  .gallery { display: grid; grid-template-columns: 2fr 1fr; gap: 28px 22px; align-items: start; }
+  figure { margin: 0; }
+  .gallery figure img { border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+  .gallery .main { grid-column: 1 / -1; }
+  .gallery .inv img { max-width: 310px; }
+  figcaption { font-size: 15px; color: var(--muted); margin-top: 8px; }
+
+  .inside { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; margin: 0; }
+  .inside div { padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .inside dt { font-weight: 600; font-size: 19px; }
+  .inside dd { margin: 4px 0 0; color: var(--muted); font-size: 16px; }
+
+  .steps { counter-reset: s; list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; max-width: 760px; }
+  .steps li { counter-increment: s; position: relative; padding-inline-start: 58px; }
+  .steps li::before { content: counter(s); position: absolute; inset-inline-start: 0; top: 2px; width: 40px; height: 40px; border-radius: 50%; background: var(--paper); border: 2px solid var(--olive); color: var(--olive); font: 700 20px/36px "Reem Kufi", sans-serif; text-align: center; }
+  .steps b { display: block; font-size: 19px; }
+  .steps p { color: var(--muted); font-size: 16px; }
+  .note { margin-top: 26px; background: var(--paper); border-inline-start: 4px solid var(--olive); padding: 14px 18px; border-radius: 10px; border-start-start-radius: 0; border-end-start-radius: 0; font-size: 16px; max-width: 760px; }
+
+  .contact { background: var(--olive); color: #fff; }
+  .contact h2 { color: #fff; }
+  .contact p { color: #dfe8e1; max-width: 52ch; }
+  .contact .links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
+  .contact a { display: inline-flex; align-items: center; gap: 10px; background: #fff; color: var(--olive-deep); text-decoration: none; font-weight: 600; padding: 12px 22px; border-radius: 12px; }
+  .contact a.mail { background: transparent; color: #fff; border: 2px solid rgba(255, 255, 255, .55); }
+  .contact a span[dir] { unicode-bidi: isolate; }
+  .contact :focus-visible { outline-color: #fff; }
+
+  footer { padding: 28px 0 40px; font-size: 14px; color: var(--muted); }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 12px; }
+    .receipt { width: 290px; padding: 24px 22px 36px; }
+    .r-row { font-size: 15px; }
+    .stamp { font-size: 30px; }
+    .gallery { grid-template-columns: 1fr; }
+    .gallery .main { grid-row: auto; }
+    .inside { grid-template-columns: 1fr; }
+    .top nav { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { .receipt, .stamp { animation: none; } }
+</style>
+</head>
+<body>
+  <header class="wrap top">
+    <a class="brand" href="./"><img src="img/apple-touch-icon.png" alt="">سيرو</a>
+    <nav aria-label="روابط الصفحة"><a href="#shots">الصور</a><a href="#install">التثبيت</a><a href="#contact">تواصل</a></nav>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <div>
+        <h1>برنامج المحل كله، مجاناً.</h1>
+        <p class="lead">بيع ونقطة بيع، مخزون ومشتريات، محاسبة وتقارير. يعمل على ويندوز بلا إنترنت، وبياناتك تبقى على جهازك.</p>
+        <div class="cta">
+          <a class="btn" id="download" href="https://github.com/anasshabrah/siro-releases/releases/latest/download/Siro-Setup.exe">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
+            نزّل سيرو لويندوز
+          </a>
+          <p class="meta" id="meta">ويندوز 10 أو 11 · نحو 120 ميغابايت</p>
+        </div>
+      </div>
+
+      <div class="receipt-stage" aria-hidden="true">
+        <div class="slot"></div>
+        <div class="receipt">
+          <div class="r-head"><b>سيرو</b><small>فاتورة · برنامج المحل كله</small></div>
+          <div class="r-row">البيع ونقطة البيع<i></i><em>0</em></div>
+          <div class="r-row">المخزون والجرد<i></i><em>0</em></div>
+          <div class="r-row">المشتريات والموردون<i></i><em>0</em></div>
+          <div class="r-row">الزبائن والديون<i></i><em>0</em></div>
+          <div class="r-row">المحاسبة والتقارير<i></i><em>0</em></div>
+          <div class="r-row">الفروع والمزامنة<i></i><em>0</em></div>
+          <div class="r-total"><span>الإجمالي</span><span>0 ل.س</span></div>
+          <p class="r-foot">شكراً لاختياركم سيرو</p>
+          <div class="stamp">مجاني</div>
+        </div>
+      </div>
+    </div>
+
+    <section class="shots" id="shots">
+      <div class="wrap">
+        <h2>هكذا يبدو من الداخل</h2>
+        <p class="intro">لقطات حقيقية من محل تجريبي. الواجهة بالعربية أولاً، وفيها الإنجليزية والوضع الداكن.</p>
+        <div class="gallery">
+          <figure class="main"><img src="img/dashboard.webp" width="1280" height="800" loading="lazy" alt="لوحة المحل: المبيعات والربح والنقدية والديون والأكثر مبيعاً لهذا الشهر"><figcaption>لوحة المحل: المبيعات والربح والنقدية وما لك وما عليك، بنظرة واحدة.</figcaption></figure>
+          <figure><img src="img/pos.webp" width="1280" height="800" loading="lazy" alt="شاشة نقطة البيع مع أصناف وفاتورة مفتوحة"><figcaption>نقطة البيع: باركود، ميزان، درج نقود، ووردية كاشير.</figcaption></figure>
+          <figure class="inv"><img src="img/invoice.webp" width="310" height="365" loading="lazy" alt="فاتورة بيع مطبوعة باسم المحل"><figcaption>فواتير تُطبع باسم محلك أو تُرسل كنص.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="inside">
+      <div class="wrap">
+        <h2>ما الذي فيه</h2>
+        <dl class="inside">
+          <div><dt>البيع ونقطة البيع</dt><dd>فواتير، عروض أسعار، مرتجعات، خصومات وعروض، ونقطة بيع سريعة بالباركود.</dd></div>
+          <div><dt>المخزون</dt><dd>عدة مستودعات، جرد فعلي، تواريخ انتهاء، واقتراحات شراء حين ينقص صنف.</dd></div>
+          <div><dt>المشتريات والموردون</dt><dd>فواتير شراء، طلبات شراء، وما عليك لكل مورد ومتى يستحق.</dd></div>
+          <div><dt>الزبائن والديون</dt><dd>كشف حساب لكل زبون، سقف للدين، وتذكير تلقائي بالفواتير المتأخرة.</dd></div>
+          <div><dt>المحاسبة</dt><dd>كل عملية تُقيَّد وحدها: ميزان مراجعة، ضرائب، بنك، وعملات أجنبية.</dd></div>
+          <div><dt>التقارير</dt><dd>منشئ تقارير، تصدير إلى Excel، واسأل البرنامج بالعربية عن أرقامك.</dd></div>
+          <div><dt>الفروع والأجهزة</dt><dd>كل فرع يعمل وحده بلا إنترنت، ويتزامن مع المركز حين يتصل.</dd></div>
+          <div><dt>الأمان</dt><dd>مستخدمون بصلاحيات، تحقق بخطوتين، ونسخ احتياطي مشفّر كل يوم.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="install" style="padding-top: 8px">
+      <div class="wrap">
+        <h2>التثبيت في ثلاث خطوات</h2>
+        <ol class="steps">
+          <li><b>نزّل الملف</b><p>اضغط زر التنزيل في أعلى الصفحة، وشغّل الملف بعد انتهائه.</p></li>
+          <li><b>إذا ظهرت رسالة «حمى Windows جهاز الكمبيوتر»</b><p>اضغط «مزيد من المعلومات» ثم «تشغيل على أي حال». تظهر لأن البرنامج جديد وغير موقّع بعد.</p></li>
+          <li><b>اكتب اسم محلك ونوع نشاطك</b><p>يجهّز البرنامج الأقسام المناسبة لك: بقالية، مطعم، جملة، ورشة أو مكتب خدمات.</p></li>
+        </ol>
+        <p class="note">التحديثات تصل وحدها حين يتصل الجهاز بالإنترنت، ويُؤخذ نسخة من بياناتك قبل كل تحديث.</p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <h2>تواصل معنا</h2>
+        <p>سؤال، اقتراح، أو شيء لم يعمل كما توقعت؟ راسلنا مباشرة.</p>
+        <div class="links">
+          <a href="https://wa.me/905550400545" target="_blank" rel="noopener">واتساب <span dir="ltr">+90 555 040 05 45</span></a>
+          <a class="mail" href="mailto:syriandealer@gmail.com?subject=%D8%B3%D9%8A%D8%B1%D9%88">بريد <span dir="ltr">syriandealer@gmail.com</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Anass Habrah · مجاني للاستخدام والمشاركة كما هو · <a href="LICENSE.txt">الرخصة</a></span>
+      <span id="version"></span>
+    </div>
+  </footer>
+
+<script>
+  // The latest version and installer size, from the public releases list. The page works the same if this fails.
+  fetch("https://api.github.com/repos/anasshabrah/siro-releases/releases/latest")
+    .then((r) => (r.ok ? r.json() : Promise.reject()))
+    .then((rel) => {
+      const v = String(rel.tag_name || "").replace(/^v/, "");
+      const exe = (rel.assets || []).find((a) => a.name === "Siro-Setup.exe");
+      if (v) {
+        document.getElementById("version").textContent = "الإصدار " + v;
+        const mb = exe ? Math.round(exe.size / 1048576) : 120;
+        document.getElementById("meta").innerHTML = 'ويندوز 10 أو 11 · <span dir="ltr">' + mb + " MB</span> · الإصدار " + v;
+      }
+    })
+    .catch(() => {});
+</script>
+</body>
+</html>
