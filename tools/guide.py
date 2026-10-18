@@ -228,6 +228,7 @@ def frame(title, desc, body, slug):
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
+<script>/* the site moved: old github.io links land on the same page at sirobusiness.com */if(location.hostname.endsWith("github.io"))location.replace("https://sirobusiness.com"+location.pathname.replace(/^\\/siro-releases/,"")+location.search+location.hash)</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} · دليل سيرو</title>
 <meta name="description" content="{desc}">
