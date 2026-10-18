@@ -4,42 +4,33 @@
 <meta charset="utf-8">
 <script>/* the site moved: old github.io links land on the same page at sirobusiness.com */if(location.hostname.endsWith("github.io"))location.replace("https://sirobusiness.com"+location.pathname.replace(/^\/siro-releases/,"")+location.search+location.hash)</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>المخزون · دليل سيرو</title>
-<meta name="description" content="دليل سيرو: المخزون. الأصناف، الجرد، المستودعات.">
+<title>المخزون والأصناف · مساعدة سيرو</title>
+<meta name="description" content="مساعدة سيرو: المخزون والأصناف. إضافة صنف، الكمية الموجودة، الباركود، الجرد، المستودعات.">
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Reem+Kufi:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="guide.css">
+<link rel="stylesheet" href="help.css">
 </head>
 <body>
 <header class="top"><div class="wrap">
   <a class="brand" href="../"><img src="../img/apple-touch-icon.png" alt="">سيرو</a>
-  <a class="crumb" href="./">دليل الاستخدام</a>
-  <a class="dl" href="../#install">التحميل</a>
+  <a class="crumb" href="./">المساعدة</a>
+  <div class="search" role="search"><input type="search" placeholder="ابحث: شام كاش، الجرد، ربط التابلت…" aria-label="ابحث في المساعدة" autocomplete="off"><ul hidden></ul></div>
+  <a class="dl" href="../">التنزيل</a>
 </div></header>
 <div class="wrap layout">
-  <nav class="toc" aria-label="أقسام الدليل"><ul><li><a href="start.html">البداية</a></li><li><a href="sales.html">البيع اليومي</a></li><li><a href="purchases.html">الشراء والموردون</a></li><li><a href="stock.html" aria-current="page">المخزون</a></li><li><a href="custom.html">العمل حسب الطلب والتصنيع</a></li><li><a href="money.html">المال والتقارير</a></li><li><a href="phone.html">تطبيق الجوال</a></li><li><a href="backup.html">الأمان والنسخ الاحتياطي</a></li><li><a href="help.html">مشاكل شائعة</a></li></ul></nav>
-  <main><h1>المخزون</h1>
-<p class="lead">كل صنف بباركوده وسعره ووحدته. الكميات تتغيّر وحدها مع البيع والشراء، والجرد يصحّح الفرق.</p>
-<h2>إضافة صنف</h2>
-<ol class="steps"><li>افتح <b class="ui">الأصناف</b>.</li><li>اكتب <b class="ui">الاسم</b>، و<b class="ui">الباركود</b> إن وُجد، و<b class="ui">الوحدة</b> و<b class="ui">سعر البيع</b>. عندك منه الآن؟ اكتب <b class="ui">التكلفة</b> و<b class="ui">الكمية الموجودة</b> (مثلاً 50 طن).</li><li>اضغط <b class="ui">إضافة</b>.</li></ol>
-<ul class="plain">
-<li><b class="ui">بلا مخزون</b>: لخدمة لا تُعدّ، أو لمنتج مركّب له قائمة مواد (قلم = جسم + غطاء، أو طبق) فتُخصم مكوّناته من المخزون عند كل بيع.</li>
-<li><b class="ui">له تاريخ انتهاء</b>: للأدوية والأغذية؛ يبيع البرنامج الأقرب انتهاءً أولاً.</li>
-<li><b class="ui">حد إعادة الطلب</b>: حين ينزل الصنف تحته يقترحه البرنامج للشراء.</li>
-</ul>
-<figure><img src="img/items.webp" width="1280" height="800" loading="lazy" alt="قائمة الأصناف ونموذج صنف جديد"><figcaption>بعد الإضافة تتغيّر الكمية والتكلفة وحدهما مع المشتريات والمبيعات، ويصحّحهما الجرد.</figcaption></figure>
-<h2>أصناف كثيرة؟ من Excel</h2>
-<ol class="steps"><li>في <b class="ui">الأصناف</b> اضغط <b class="ui">استيراد من Excel</b>، ونزّل <b class="ui">قالب Excel</b> إن لم يكن عندك ملف.</li><li>اختر ملفك. أي ملف Excel أو CSV يصلح، حتى المصدَّر من برنامجك القديم: البرنامج يتعرّف على الأعمدة من عناوينها، وتغيّر أي عمود لم يُعرف.</li><li>تظهر <b class="ui">المعاينة</b>: كل صف جديد أو تحديث أو خطأ، مع السبب. الأخطاء تُنزَّل في ملف لتصلحها.</li><li>اضغط <b class="ui">استورد</b>. يُحفظ كل شيء دفعة واحدة، والأصناف الجديدة تدخل بكمياتها الافتتاحية.</li></ol>
-<figure><img src="img/import.webp" width="1085" height="1072" loading="lazy" alt="معاينة استيراد الأصناف من ملف Excel"><figcaption>الأعمدة معروفة من عناوينها، وكل صف يقول ما سيحدث له قبل الحفظ.</figcaption></figure>
-<p class="note">لتعديل أسعار كثيرة دفعة واحدة: <b class="ui">تصدير إلى Excel</b>، عدّل الأسعار في Excel، ثم استورد الملف نفسه. وبالطريقة نفسها الزبائن والموردون، وعلى الجوال من زر Excel في شاشة الأصناف أو الزبائن.</p>
-<h2>الجرد</h2>
-<ol class="steps"><li>افتح <b class="ui">المخزون ← الجرد الفعلي</b> واختر المستودع.</li><li>اكتب الكمية المعدودة لكل صنف، أو امسح الباركود بـ <b class="ui">مسح بالكاميرا</b>.</li><li>اضغط <b class="ui">اعتماد الجرد</b>. يُصحَّح المخزون ويُقيَّد الفرق نقصاً أو زيادة.</li></ol>
-<figure><img src="img/count.webp" width="1280" height="800" loading="lazy" alt="شاشة الجرد الفعلي"><figcaption>الأصناف التي تتركها فارغة لا تتغيّر.</figcaption></figure>
-<p class="note">عدة مستودعات؟ صفحة المخزون تعرض كل مستودع وحده، والنقل بينها يحفظ الكميات ولا يغيّر الحسابات.</p>
-<nav class="pager" aria-label="التنقل بين الصفحات"><a class="prev" href="purchases.html"><small>السابق</small>الشراء والموردون</a><a class="next" href="custom.html"><small>التالي</small>العمل حسب الطلب والتصنيع</a></nav></main>
+  <nav class="toc" aria-label="أقسام المساعدة"><ul><li><a href="start.html">البداية</a></li><li><a href="sales.html">البيع اليومي</a></li><li><a href="purchases.html">الشراء والموردون</a></li><li><a href="stock.html" aria-current="page">المخزون والأصناف</a></li><li><a href="custom.html">التصنيع والمنتجات المركّبة</a></li><li><a href="money.html">المال والتقارير</a></li><li><a href="excel.html">Excel ونقل البيانات</a></li><li><a href="settings.html">الإعدادات وطرق الدفع</a></li><li><a href="phone.html">تطبيق الجوال والأجهزة</a></li><li><a href="backup.html">الأمان والنسخ الاحتياطي</a></li><li><a href="help.html">مشاكل وحلول</a></li><li><a href="new.html">ما الجديد</a></li></ul></nav>
+  <main><h1>المخزون والأصناف</h1><p class="lead">كل صنف بباركوده وسعره ووحدته. الكميات تتغيّر وحدها مع البيع والشراء، والجرد يصحّح الفرق.</p><ul class="intoc"><li><a href="#add-item">إضافة صنف</a></li><li><a href="#on-hand">كم بقي عندي من كل صنف؟</a></li><li><a href="#count">الجرد</a></li><li><a href="#barcode">الباركود والمسح</a></li><li><a href="#warehouses">عدة مستودعات</a></li><li><a href="#many-items">أصناف كثيرة؟</a></li></ul><section id="add-item"><h2>إضافة صنف</h2><ol class="steps"><li>افتح <b class="ui">الأصناف</b>.</li><li>اكتب <b class="ui">الاسم</b>، و<b class="ui">الباركود</b> إن وُجد، و<b class="ui">الوحدة</b> (قطعة، كيلو، طن، علبة…) و<b class="ui">سعر البيع</b>.</li><li>عندك منه الآن؟ اكتب <b class="ui">التكلفة</b> (سعر شراء الوحدة) و<b class="ui">الكمية الموجودة</b>، مثلاً 50 طن.</li><li>اضغط <b class="ui">إضافة</b>.</li></ol><figure><img src="img/items.webp" width="1280" height="800" loading="lazy" alt="قائمة الأصناف ونموذج صنف جديد"><figcaption>بعد الإضافة تتغيّر الكمية والتكلفة وحدهما مع المشتريات والمبيعات، ويصحّحهما الجرد.</figcaption></figure><ul class="plain"><li><b class="ui">بلا مخزون</b>: لخدمة لا تُعدّ (توصيل، صيانة)، أو <a href="custom.html#kit">لمنتج مركّب</a> تُخصم قطعه عند كل بيع.</li><li><b class="ui">له تاريخ انتهاء</b>: للأدوية والأغذية؛ يبيع البرنامج الأقرب انتهاءً أولاً.</li><li><b class="ui">حد إعادة الطلب</b>: حين ينزل الصنف تحته يقترحه البرنامج للشراء.</li></ul><p class="note">على الجوال: <b class="ui">الأصناف ← جديد</b> وفيه الوحدة والكمية الموجودة وتكلفة الوحدة. الكمية الموجودة تظهر لمن عنده صلاحية المحاسبة.</p></section><section id="on-hand"><h2>كم بقي عندي من كل صنف؟</h2><ul class="plain"><li><b class="ui">المخزون</b> يعرض كل صنف: الموجود، والمحجوز للطلبات، والقادم من المشتريات، والتكلفة.</li><li>يقترح البرنامج شراء ما نزل تحت <b class="ui">حد إعادة الطلب</b>.</li><li>صنف أضفته بلا كمية من قبل؟ اكتب كميته الفعلية في <a href="#count">الجرد</a>.</li></ul></section><section id="count"><h2>الجرد</h2><ol class="steps"><li>افتح <b class="ui">المخزون ← الجرد الفعلي</b> واختر المستودع.</li><li>اكتب الكمية المعدودة لكل صنف، أو امسح الباركود بـ <b class="ui">مسح بالكاميرا</b>.</li><li>اضغط <b class="ui">اعتماد الجرد</b>. يُصحَّح المخزون ويُقيَّد الفرق نقصاً أو زيادة.</li></ol><figure><img src="img/count.webp" width="1280" height="800" loading="lazy" alt="شاشة الجرد الفعلي"><figcaption>الأصناف التي تتركها فارغة لا تتغيّر.</figcaption></figure></section><section id="barcode"><h2>الباركود والمسح</h2><ul class="plain"><li>على الكمبيوتر: أي قارئ باركود يُوصل بالـ USB يعمل مباشرة، كأنه لوحة مفاتيح. امسح في خانة البحث أو خانة الباركود.</li><li>على الجوال: زر <b class="ui">مسح</b> يفتح الكاميرا. ثبّت الجوال لحظة على الباركود.</li><li>الكاميرا تفتح ولا تقرأ؟ حدّث التطبيق إلى 1.0.7 أو أحدث، ففيه إصلاح قراءة الباركود.</li><li>ميزان يطبع ملصقات باركود: <b class="ui">الإعدادات ← نقطة البيع</b> ← باركود الميزان.</li></ul></section><section id="warehouses"><h2>عدة مستودعات</h2><p>صفحة <b class="ui">المخزون</b> تعرض كل مستودع وحده، والنقل بينها يحفظ الكميات ولا يغيّر الحسابات. لكل جهاز مستودعه، وسيارة المندوب مستودع.</p></section><section id="many-items"><h2>أصناف كثيرة؟</h2><p>أدخلها دفعة واحدة من Excel مع كمياتها وأسعارها: <a href="excel.html#import">الاستيراد من Excel</a>.</p></section><nav class="pager" aria-label="التنقل بين الصفحات"><a class="prev" href="purchases.html"><small>السابق</small>الشراء والموردون</a><a class="next" href="custom.html"><small>التالي</small>التصنيع والمنتجات المركّبة</a></nav></main>
 </div>
-<footer><div class="wrap">© 2026 Anass Habrah · <a href="../">سيرو</a> · <a href="../terms.html">شروط الاستخدام</a> · <a href="../privacy.html">الخصوصية</a> · <a href="mailto:syriandealer@gmail.com">تواصل معنا</a></div></footer>
+<footer><div class="wrap">© 2026 Anass Habrah · <a href="../">سيرو</a> · <a href="../license.html">الترخيص</a> · <a href="../terms.html">شروط الاستخدام</a> · <a href="../privacy.html">الخصوصية</a> · <a href="mailto:syriandealer@gmail.com">تواصل معنا</a></div></footer>
+<script>(()=>{const norm=s=>s.normalize("NFKC").replace(/[\u064B-\u0652\u0640]/g,"").replace(/[أإآٱ]/g,"ا").replace(/ى/g,"ي").replace(/ة/g,"ه").replace(/ؤ/g,"و").replace(/ئ/g,"ي").toLowerCase();
+const word=w=>w.length>3&&w.startsWith("ال")?w.slice(2):w;let data;const load=async()=>data??=(await(await fetch("search.json")).json()).map(d=>({...d,n:norm(d.t),k:norm(d.k),x:norm(d.x)}));
+for(const box of document.querySelectorAll(".search")){const input=box.querySelector("input"),list=box.querySelector("ul");
+const run=async()=>{const q=norm(input.value.trim());if(!q){list.hidden=true;return}const words=q.split(/\s+/).map(word),all=await load();
+const hits=all.map(d=>{let s=0;for(const w of words){if(d.n.includes(w))s+=3;else if(d.k.includes(w))s+=2;else if(d.x.includes(w))s+=1;else return null}return[s,d]}).filter(Boolean).sort((a,b)=>b[0]-a[0]).slice(0,8);
+list.innerHTML=hits.length?hits.map(([,d])=>'<li><a href="'+d.u+'">'+d.t+'<small>'+d.s+'</small></a></li>').join(""):'<li class="none">ما وجدنا جواباً. جرّب كلمة أخرى، أو أرسل سؤالك من زر الميكروفون في البرنامج.</li>';list.hidden=false};
+input.addEventListener("input",run);input.addEventListener("keydown",e=>{if(e.key==="Enter"){const a=list.querySelector("a");if(a)location.href=a.href}if(e.key==="Escape")list.hidden=true});
+document.addEventListener("click",e=>{if(!box.contains(e.target))list.hidden=true});const q=new URLSearchParams(location.search).get("q");if(q&&box.classList.contains("big")){input.value=q;run()}}})();</script>
 </body>
 </html>

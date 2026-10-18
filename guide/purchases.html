@@ -4,32 +4,33 @@
 <meta charset="utf-8">
 <script>/* the site moved: old github.io links land on the same page at sirobusiness.com */if(location.hostname.endsWith("github.io"))location.replace("https://sirobusiness.com"+location.pathname.replace(/^\/siro-releases/,"")+location.search+location.hash)</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>الشراء والموردون · دليل سيرو</title>
-<meta name="description" content="دليل سيرو: الشراء والموردون. فاتورة شراء، دفع، دولار.">
+<title>الشراء والموردون · مساعدة سيرو</title>
+<meta name="description" content="مساعدة سيرو: الشراء والموردون. فاتورة شراء، دولار، دفع، مصروف.">
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Reem+Kufi:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="guide.css">
+<link rel="stylesheet" href="help.css">
 </head>
 <body>
 <header class="top"><div class="wrap">
   <a class="brand" href="../"><img src="../img/apple-touch-icon.png" alt="">سيرو</a>
-  <a class="crumb" href="./">دليل الاستخدام</a>
-  <a class="dl" href="../#install">التحميل</a>
+  <a class="crumb" href="./">المساعدة</a>
+  <div class="search" role="search"><input type="search" placeholder="ابحث: شام كاش، الجرد، ربط التابلت…" aria-label="ابحث في المساعدة" autocomplete="off"><ul hidden></ul></div>
+  <a class="dl" href="../">التنزيل</a>
 </div></header>
 <div class="wrap layout">
-  <nav class="toc" aria-label="أقسام الدليل"><ul><li><a href="start.html">البداية</a></li><li><a href="sales.html">البيع اليومي</a></li><li><a href="purchases.html" aria-current="page">الشراء والموردون</a></li><li><a href="stock.html">المخزون</a></li><li><a href="custom.html">العمل حسب الطلب والتصنيع</a></li><li><a href="money.html">المال والتقارير</a></li><li><a href="phone.html">تطبيق الجوال</a></li><li><a href="backup.html">الأمان والنسخ الاحتياطي</a></li><li><a href="help.html">مشاكل شائعة</a></li></ul></nav>
-  <main><h1>الشراء والموردون</h1>
-<p class="lead">فاتورة الشراء تُدخل البضاعة إلى المخزون وتحسب تكلفتها، وتسجّل ما عليك للمورد.</p>
-<h2>فاتورة شراء</h2>
-<ol class="steps"><li>من <b class="ui">المشتريات</b> اختر <b class="ui">فاتورة شراء جديدة</b>.</li><li>اختر المورد، ثم الأصناف والكميات وأسعار الشراء.</li><li>إن كان الشراء بالدولار اختر <b class="ui">العملة</b>، واكتب <b class="ui">سعر الصرف</b> أو اتركه فارغاً ليُستعمل آخر سعر مسجّل.</li><li>اضغط <b class="ui">حفظ</b>.</li></ol>
-<figure><img src="img/purchase.webp" width="1280" height="800" loading="lazy" alt="فاتورة شراء جديدة"><figcaption>تكلفة الصنف تُحسب من أسعار الشراء، فلا تُكتب يدوياً.</figcaption></figure>
-<h2>دفع لمورد</h2>
-<ol class="steps"><li>افتح المورد من <b class="ui">العملاء والموردون</b>.</li><li>في <b class="ui">دفع للمورد</b> اكتب المبلغ واضغط <b class="ui">تسجيل</b>.</li></ol>
-<p class="note">مصروف مثل الإيجار أو الكهرباء: <b class="ui">العمليات اليومية ← اشتريت</b> واختر مصروفاً.</p>
-<nav class="pager" aria-label="التنقل بين الصفحات"><a class="prev" href="sales.html"><small>السابق</small>البيع اليومي</a><a class="next" href="stock.html"><small>التالي</small>المخزون</a></nav></main>
+  <nav class="toc" aria-label="أقسام المساعدة"><ul><li><a href="start.html">البداية</a></li><li><a href="sales.html">البيع اليومي</a></li><li><a href="purchases.html" aria-current="page">الشراء والموردون</a></li><li><a href="stock.html">المخزون والأصناف</a></li><li><a href="custom.html">التصنيع والمنتجات المركّبة</a></li><li><a href="money.html">المال والتقارير</a></li><li><a href="excel.html">Excel ونقل البيانات</a></li><li><a href="settings.html">الإعدادات وطرق الدفع</a></li><li><a href="phone.html">تطبيق الجوال والأجهزة</a></li><li><a href="backup.html">الأمان والنسخ الاحتياطي</a></li><li><a href="help.html">مشاكل وحلول</a></li><li><a href="new.html">ما الجديد</a></li></ul></nav>
+  <main><h1>الشراء والموردون</h1><p class="lead">فاتورة الشراء تُدخل البضاعة إلى المخزون وتحسب تكلفتها، وتسجّل ما عليك للمورد.</p><ul class="intoc"><li><a href="#invoice">فاتورة شراء</a></li><li><a href="#dollar">الشراء بالدولار</a></li><li><a href="#pay">دفع لمورد</a></li><li><a href="#expense">مصروف</a></li></ul><section id="invoice"><h2>فاتورة شراء</h2><ol class="steps"><li>من <b class="ui">المشتريات</b> اختر <b class="ui">فاتورة شراء جديدة</b>.</li><li>اختر المورد، ثم الأصناف والكميات وأسعار الشراء.</li><li>اضغط <b class="ui">حفظ</b>. تدخل البضاعة إلى المخزون، وتُحسب تكلفة كل صنف من أسعار الشراء وحدها.</li></ol><figure><img src="img/purchase.webp" width="1280" height="800" loading="lazy" alt="فاتورة شراء جديدة"><figcaption>تكلفة الصنف تُحسب من أسعار الشراء، فلا تُكتب يدوياً.</figcaption></figure><p class="note">غلط في فاتورة شراء؟ <a href="sales.html#edit-invoice">عدّلها</a> كفاتورة البيع.</p></section><section id="dollar"><h2>الشراء بالدولار</h2><ol class="steps"><li>في فاتورة الشراء اختر <b class="ui">العملة</b>.</li><li>اكتب <b class="ui">سعر الصرف</b>، أو اتركه فارغاً ليُستعمل آخر سعر مسجّل.</li><li>يبقى ما عليك للمورد بالدولار، والقيود بالليرة بسعر يوم الفاتورة. فرق السعر عند الدفع يُقيَّد وحده.</li></ol></section><section id="pay"><h2>دفع لمورد</h2><ol class="steps"><li>افتح المورد من <b class="ui">العملاء والموردون</b>.</li><li>في <b class="ui">دفع للمورد</b> اكتب المبلغ واضغط <b class="ui">تسجيل</b>. تُسدَّد فواتيره الأقدم أولاً.</li></ol></section><section id="expense"><h2>مصروف</h2><p>من <b class="ui">العمليات اليومية</b> اختر <b class="ui">اشتريت</b> ثم مصروفاً، واكتب المبلغ. يدخل في الأرباح والخسائر مصروفاً.</p></section><nav class="pager" aria-label="التنقل بين الصفحات"><a class="prev" href="sales.html"><small>السابق</small>البيع اليومي</a><a class="next" href="stock.html"><small>التالي</small>المخزون والأصناف</a></nav></main>
 </div>
-<footer><div class="wrap">© 2026 Anass Habrah · <a href="../">سيرو</a> · <a href="../terms.html">شروط الاستخدام</a> · <a href="../privacy.html">الخصوصية</a> · <a href="mailto:syriandealer@gmail.com">تواصل معنا</a></div></footer>
+<footer><div class="wrap">© 2026 Anass Habrah · <a href="../">سيرو</a> · <a href="../license.html">الترخيص</a> · <a href="../terms.html">شروط الاستخدام</a> · <a href="../privacy.html">الخصوصية</a> · <a href="mailto:syriandealer@gmail.com">تواصل معنا</a></div></footer>
+<script>(()=>{const norm=s=>s.normalize("NFKC").replace(/[\u064B-\u0652\u0640]/g,"").replace(/[أإآٱ]/g,"ا").replace(/ى/g,"ي").replace(/ة/g,"ه").replace(/ؤ/g,"و").replace(/ئ/g,"ي").toLowerCase();
+const word=w=>w.length>3&&w.startsWith("ال")?w.slice(2):w;let data;const load=async()=>data??=(await(await fetch("search.json")).json()).map(d=>({...d,n:norm(d.t),k:norm(d.k),x:norm(d.x)}));
+for(const box of document.querySelectorAll(".search")){const input=box.querySelector("input"),list=box.querySelector("ul");
+const run=async()=>{const q=norm(input.value.trim());if(!q){list.hidden=true;return}const words=q.split(/\s+/).map(word),all=await load();
+const hits=all.map(d=>{let s=0;for(const w of words){if(d.n.includes(w))s+=3;else if(d.k.includes(w))s+=2;else if(d.x.includes(w))s+=1;else return null}return[s,d]}).filter(Boolean).sort((a,b)=>b[0]-a[0]).slice(0,8);
+list.innerHTML=hits.length?hits.map(([,d])=>'<li><a href="'+d.u+'">'+d.t+'<small>'+d.s+'</small></a></li>').join(""):'<li class="none">ما وجدنا جواباً. جرّب كلمة أخرى، أو أرسل سؤالك من زر الميكروفون في البرنامج.</li>';list.hidden=false};
+input.addEventListener("input",run);input.addEventListener("keydown",e=>{if(e.key==="Enter"){const a=list.querySelector("a");if(a)location.href=a.href}if(e.key==="Escape")list.hidden=true});
+document.addEventListener("click",e=>{if(!box.contains(e.target))list.hidden=true});const q=new URLSearchParams(location.search).get("q");if(q&&box.classList.contains("big")){input.value=q;run()}}})();</script>
 </body>
 </html>

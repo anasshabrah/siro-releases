@@ -112,17 +112,15 @@
   .phones img { border-radius: 26px; border: 6px solid var(--ink); background: #fff; box-shadow: 0 14px 30px rgba(22, 32, 27, .12); }
   .phones figcaption { text-align: center; }
 
+  .shots .inside { margin-top: 64px; }
+  .inside dt a { color: inherit; text-decoration: none; }
+  .inside dt a:hover { color: var(--olive); text-decoration: underline; }
+  .more { margin-top: 26px; color: var(--muted); }
   .inside { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; margin: 0; }
   .inside div { padding: 18px 0; border-bottom: 1px solid var(--line); }
   .inside dt { font-weight: 600; font-size: 19px; }
   .inside dd { margin: 4px 0 0; color: var(--muted); font-size: 16px; }
 
-  .steps { counter-reset: s; list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; max-width: 760px; }
-  .steps li { counter-increment: s; position: relative; padding-inline-start: 58px; }
-  .steps li::before { content: counter(s); position: absolute; inset-inline-start: 0; top: 2px; width: 40px; height: 40px; border-radius: 50%; background: var(--paper); border: 2px solid var(--olive); color: var(--olive); font: 700 20px/36px "Reem Kufi", sans-serif; text-align: center; }
-  .steps b { display: block; font-size: 19px; }
-  .steps p { color: var(--muted); font-size: 16px; }
-  .note { margin-top: 26px; background: var(--paper); border-inline-start: 4px solid var(--olive); padding: 14px 18px; border-radius: 10px; border-start-start-radius: 0; border-end-start-radius: 0; font-size: 16px; max-width: 760px; }
 
   .contact { background: var(--olive); color: #fff; }
   .contact h2 { color: #fff; }
@@ -153,7 +151,7 @@
 <body>
   <header class="wrap top">
     <a class="brand" href="./"><img src="img/apple-touch-icon.png" alt="">سيرو</a>
-    <nav aria-label="روابط الصفحة"><a href="#shots">الصور</a><a href="#inside">ما فيه</a><a href="#install">التثبيت</a><a href="guide/">الدليل</a><a href="#contact">تواصل</a></nav>
+    <nav aria-label="روابط الصفحة"><a href="#inside">ما فيه</a><a href="guide/">المساعدة</a><a href="#contact">تواصل</a></nav>
   </header>
 
   <main>
@@ -171,6 +169,7 @@
             نزّل لأندرويد
           </a>
           <p class="meta" id="meta">ويندوز 10 أو 11 · نحو 120 ميغابايت · أندرويد: <span dir="ltr">52 MB</span></p>
+          <p class="meta"><a href="guide/start.html#install">طريقة التثبيت</a> · <a href="guide/">المساعدة</a> · <a href="guide/new.html">ما الجديد</a></p>
         </div>
       </div>
 
@@ -192,9 +191,9 @@
       </div>
     </div>
 
-    <section class="shots" id="shots">
+    <section class="shots" id="inside">
       <div class="wrap">
-        <h2>هكذا يبدو من الداخل</h2>
+        <h2>ما الذي فيه</h2>
         <p class="intro">لقطات حقيقية من بقالية تجريبية، بالعربية أولاً. فيه الإنجليزية والوضع الداكن أيضاً.</p>
         <div class="device">
           <h3>على الكمبيوتر</h3>
@@ -214,40 +213,23 @@
             <figure><img src="img/phone-profit.webp" width="540" height="1110" loading="lazy" alt="الأرباح والخسائر لهذا الشهر"><figcaption>ربحك هذا الشهر</figcaption></figure>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="inside">
-      <div class="wrap">
-        <h2>ما الذي فيه</h2>
         <dl class="inside">
-          <div><dt>البيع ونقطة البيع</dt><dd>فواتير تُعدَّل بعد حفظها ويبقى أثرها في الدفاتر، عروض أسعار، مرتجعات، خصومات، ونقطة بيع سريعة بالباركود.</dd></div>
-          <div><dt>المخزون</dt><dd>عدة مستودعات، جرد، تواريخ انتهاء، واقتراحات شراء حين ينقص صنف.</dd></div>
-          <div><dt>المشتريات والموردون</dt><dd>شراء بالليرة أو الدولار، وما عليك لكل مورد ومتى يستحق.</dd></div>
-          <div><dt>الزبائن والديون</dt><dd>كشف حساب لكل زبون، سقف للدين، وتذكير بالفواتير المتأخرة.</dd></div>
-          <div><dt>العمل حسب الطلب والتصنيع</dt><dd>للخياط والورشة: فاتورة بوصف العمل والمواد المستعملة. ووصفات، تجميع وتفكيك، وكم تكلّفك القطعة وكم تربح منها قبل أن تصنعها.</dd></div>
-          <div><dt>المحاسبة والتقارير</dt><dd>كل عملية تُقيَّد وحدها: أرباح وخسائر، ميزان مراجعة، تقارير، واسأل البرنامج بالعربية.</dd></div>
-          <div><dt>الجوال والفروع</dt><dd>التطبيق يعمل وحده لمحل صغير، أو كفرع ومندوب يتزامن مع المركز حين يتصل.</dd></div>
-          <div><dt>الأمان والنسخ الاحتياطي</dt><dd>صلاحيات، تحقق بخطوتين، قفل للتطبيق، ونسخ مشفّرة تنتقل بين الجوال والكمبيوتر.</dd></div>
-          <div><dt>الانتقال من برنامج قديم</dt><dd>أدخل أصنافك وزبائنك وأرصدتك من ملف Excel بقالب جاهز، وترى ما سيحدث لكل سطر قبل الحفظ.</dd></div>
-          <div><dt>مساعدة بصوتك</dt><dd>زر الميكروفون في كل شاشة: اشرح المشكلة أو الاقتراح بثلاثين ثانية وتصل للمطوّر مباشرة.</dd></div>
+          <div><dt><a href="guide/sales.html">البيع ونقطة البيع</a></dt><dd>فواتير تُعدَّل بعد حفظها ويبقى أثرها في الدفاتر، عروض أسعار، مرتجعات، خصومات، ونقطة بيع سريعة بالباركود.</dd></div>
+          <div><dt><a href="guide/stock.html">المخزون</a></dt><dd>عدة مستودعات، جرد، تواريخ انتهاء، واقتراحات شراء حين ينقص صنف.</dd></div>
+          <div><dt><a href="guide/purchases.html">المشتريات والموردون</a></dt><dd>شراء بالليرة أو الدولار، وما عليك لكل مورد ومتى يستحق.</dd></div>
+          <div><dt><a href="guide/sales.html#receipt">الزبائن والديون</a></dt><dd>كشف حساب لكل زبون، سقف للدين، وتذكير بالفواتير المتأخرة.</dd></div>
+          <div><dt><a href="guide/custom.html">العمل حسب الطلب والتصنيع</a></dt><dd>للخياط والورشة: فاتورة بوصف العمل والمواد المستعملة. ووصفات، تجميع وتفكيك، وكم تكلّفك القطعة وكم تربح منها قبل أن تصنعها.</dd></div>
+          <div><dt><a href="guide/money.html">المحاسبة والتقارير</a></dt><dd>كل عملية تُقيَّد وحدها: أرباح وخسائر، ميزان مراجعة، تقارير، واسأل البرنامج بالعربية.</dd></div>
+          <div><dt><a href="guide/phone.html">الجوال والفروع</a></dt><dd>التطبيق يعمل وحده لمحل صغير، أو كفرع ومندوب يتزامن مع المركز حين يتصل.</dd></div>
+          <div><dt><a href="guide/backup.html">الأمان والنسخ الاحتياطي</a></dt><dd>صلاحيات، تحقق بخطوتين، قفل للتطبيق، ونسخ مشفّرة تنتقل بين الجوال والكمبيوتر.</dd></div>
+          <div><dt><a href="guide/excel.html">الانتقال من برنامج قديم</a></dt><dd>أدخل أصنافك وزبائنك وأرصدتك من ملف Excel بقالب جاهز، وترى ما سيحدث لكل سطر قبل الحفظ.</dd></div>
+          <div><dt><a href="guide/help.html#voice">مساعدة بصوتك</a></dt><dd>زر الميكروفون في كل شاشة: اشرح المشكلة أو الاقتراح بثلاثين ثانية وتصل للمطوّر مباشرة.</dd></div>
         </dl>
+        <p class="more">كل ميزة خطوة بخطوة، مع حلول المشاكل الشائعة: <a href="guide/">المساعدة</a>.</p>
       </div>
     </section>
 
-    <section id="install" style="padding-top: 8px">
-      <div class="wrap">
-        <h2>التثبيت في ثلاث خطوات</h2>
-        <ol class="steps">
-          <li><b>نزّل الملف</b><p>اضغط زر التنزيل في أعلى الصفحة، وشغّل الملف بعد انتهائه.</p></li>
-          <li><b>إذا ظهرت رسالة «حمى Windows جهاز الكمبيوتر»</b><p>اضغط «مزيد من المعلومات» ثم «تشغيل على أي حال». تظهر لأن البرنامج جديد وغير موقّع بعد.</p></li>
-          <li><b>اكتب اسم محلك ونوع نشاطك</b><p>يجهّز البرنامج الأقسام المناسبة لك: بقالية، مطعم، جملة، ورشة أو مكتب خدمات.</p></li>
-        </ol>
-        <p class="note">على أندرويد: نزّل التطبيق وافتح الملف. إذا طلب الجوال السماح بالتثبيت من هذا المصدر فاسمح به مرة واحدة.</p>
-        <p class="note"><b>جديد على سيرو؟</b> <a href="guide/">دليل الاستخدام</a> يشرح كل مهمة خطوة بخطوة: البيع، الشراء، المخزون، الحسابات، الجوال، والنسخ الاحتياطي.</p>
-        <p class="note">التحديثات تصل وحدها حين يتصل الجهاز بالإنترنت، وتُؤخذ نسخة من بياناتك قبل كل تحديث.</p>
-      </div>
-    </section>
+
 
     <section class="contact" id="contact">
       <div class="wrap">
