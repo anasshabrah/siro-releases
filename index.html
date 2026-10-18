@@ -74,6 +74,13 @@
   .btn.ghost:hover { background: #f6f9f6; }
   .btn.ghost:active { box-shadow: 0 2px 0 var(--line); }
   .meta { flex-basis: 100%; }
+  .cta .btn { flex: 1 1 0; justify-content: center; white-space: nowrap; max-width: 280px; }
+  @media (max-width: 520px) {
+    .cta { gap: 10px; }
+    .cta .btn { font-size: 16px; gap: 8px; padding: 14px 10px; }
+    .cta .btn.ghost { padding: 12px 8px; }
+    .cta .btn svg { width: 18px; height: 18px; }
+  }
 
   /* the receipt: the one loud thing on the page */
   .receipt-stage { position: relative; display: flex; justify-content: center; }
