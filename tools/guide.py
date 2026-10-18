@@ -4,8 +4,8 @@ import io, os, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(HERE, "..", "guide")
-APK = "https://github.com/anasshabrah/siro-releases/releases/download/android/Siro-Android.apk"
-EXE = "https://github.com/anasshabrah/siro-releases/releases/latest/download/Siro-Setup.exe"
+APK = "../download/Siro-Android.apk"
+EXE = "../download/Siro-Setup.exe"
 
 def ui(t):  # a label exactly as it appears in the program
     return f'<b class="ui">{t}</b>'
@@ -199,6 +199,8 @@ PAGES = [
   ("help", "مشاكل شائعة", "حلول سريعة", f"""
 <p class="lead">أكثر ما يُسأل عنه، بجواب قصير.</p>
 <dl class="faq">
+<dt>عندي مشكلة أو اقتراح</dt>
+<dd>اضغط زر الميكروفون في الزاوية السفلية من البرنامج أو من الشاشة الرئيسية للتطبيق، واشرح بأقل من 30 ثانية. تصل الملاحظة للمطوّر مباشرة، واترك رقمك إن أردت أن نتواصل معك.</dd>
 <dt>ظهرت رسالة «حمى Windows جهاز الكمبيوتر» عند التثبيت</dt>
 <dd>اضغط {ui("مزيد من المعلومات")} ثم {ui("تشغيل على أي حال")}. تظهر للبرامج الجديدة فقط.</dd>
 <dt>نسي موظف كلمة مروره</dt>
