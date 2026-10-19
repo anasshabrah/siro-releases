@@ -138,7 +138,7 @@
   /* the numbers: real counts from stats.json, hidden until they arrive */
   .proof { padding: 0 0 64px; }
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-  .tally { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--paper); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 10px 24px rgba(22, 32, 27, .06); }
+  .tally { display: grid; grid-template-columns: repeat(2, 1fr); background: var(--paper); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 10px 24px rgba(22, 32, 27, .06); }
   .tally div { padding: 22px 26px; }
   .tally div + div { border-inline-start: 2px dashed var(--line); }
   .tally b { display: block; font: 700 clamp(36px, 5vw, 52px)/1.1 "Reem Kufi", "IBM Plex Sans Arabic", sans-serif; color: var(--olive-deep); font-variant-numeric: tabular-nums; }
@@ -225,7 +225,6 @@
       <div class="wrap">
         <h2 id="numbers-title" class="sr">سيرو بالأرقام</h2>
         <div class="tally">
-          <div><b id="n-devices"></b><span>أجهزة فتحت سيرو خلال آخر 30 يوماً</span><small id="n-split"></small></div>
           <div><b id="n-downloads"></b><span>تنزيلات للبرنامج والتطبيق منذ الإطلاق</span><small>من موقعنا وصفحة الإصدارات</small></div>
           <div><b id="n-releases"></b><span>تحديثات للبرنامج منذ الإطلاق</span><small id="n-last"></small></div>
         </div>
@@ -310,11 +309,8 @@
     .then((r) => (r.ok ? r.json() : Promise.reject()))
     .then((s) => {
       const n = (x) => Number(x).toLocaleString("en-US");
-      const d = s.devices30 || {};
-      if (!s.downloads || !(d.desktop + d.phone)) return;
+      if (!s.downloads) return;
       const set = (id, text) => { document.getElementById(id).textContent = text; };
-      set("n-devices", n(d.desktop + d.phone));
-      set("n-split", n(d.desktop) + " كمبيوتر · " + n(d.phone) + " جوال");
       set("n-downloads", n(s.downloads));
       set("n-releases", n(s.releases));
       if (s.lastRelease) {
