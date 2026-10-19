@@ -171,11 +171,11 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
             نزّل لويندوز
           </a>
-          <a class="btn ghost" href="download/Siro-Android.apk">
+          <a class="btn ghost" href="https://play.google.com/store/apps/details?id=com.habrah.siro" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>
-            نزّل لأندرويد
+            أندرويد على Google Play
           </a>
-          <p class="meta" id="meta">ويندوز 10 أو 11 · نحو 120 ميغابايت · أندرويد: <span dir="ltr">52 MB</span></p>
+          <p class="meta" id="meta">ويندوز 10 أو 11 · نحو 120 ميغابايت</p>
           <p class="meta"><a href="guide/start.html#install">طريقة التثبيت</a> · <a href="guide/">المساعدة</a> · <a href="guide/new.html">ما الجديد</a></p>
         </div>
       </div>
@@ -257,16 +257,16 @@
   </footer>
 
 <script>
-  // The latest version and sizes, from the same update files the program and the app read. The page works the same if this fails.
+  // The latest version and size, from the update file the program reads. The page works the same if this fails.
   const get = (f) => fetch("download/" + f, { cache: "no-cache" }).then((r) => (r.ok ? r.text() : Promise.reject()));
-  Promise.all([get("latest.yml"), get("android.json").then(JSON.parse).catch(() => null)])
-    .then(([yml, apk]) => {
+  get("latest.yml")
+    .then((yml) => {
       const v = (yml.match(/^version:\s*(\S+)/m) || [])[1];
       const size = Number((yml.match(/^\s+size:\s*(\d+)/m) || [])[1]);
       if (!v) return;
       const mb = (n) => '<span dir="ltr">' + Math.round(n / 1048576) + " MB</span>";
       document.getElementById("version").textContent = "الإصدار " + v;
-      document.getElementById("meta").innerHTML = "ويندوز 10 أو 11 · " + (size ? mb(size) : "") + " · الإصدار " + v + (apk ? " · أندرويد " + apk.version + ": " + mb(apk.size) : "");
+      document.getElementById("meta").innerHTML = "ويندوز 10 أو 11 · " + (size ? mb(size) : "") + " · الإصدار " + v;
     })
     .catch(() => {});
 </script>
