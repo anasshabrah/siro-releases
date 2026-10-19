@@ -135,6 +135,23 @@
   .inside dd { margin: 4px 0 0; color: var(--muted); font-size: 16px; }
 
 
+  /* the numbers: real counts from stats.json, hidden until they arrive */
+  .proof { padding: 0 0 64px; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .tally { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--paper); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 10px 24px rgba(22, 32, 27, .06); }
+  .tally div { padding: 22px 26px; }
+  .tally div + div { border-inline-start: 2px dashed var(--line); }
+  .tally b { display: block; font: 700 clamp(36px, 5vw, 52px)/1.1 "Reem Kufi", "IBM Plex Sans Arabic", sans-serif; color: var(--olive-deep); font-variant-numeric: tabular-nums; }
+  .tally span { display: block; margin-top: 6px; font-size: 16px; line-height: 1.5; }
+  .tally small { display: block; margin-top: 4px; font-size: 14px; color: var(--muted); }
+  .proof .note { margin-top: 14px; font-size: 14px; color: var(--muted); }
+  .proof .live { display: inline-block; vertical-align: middle; margin-inline-end: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--wa); box-shadow: 0 0 0 4px rgba(31, 122, 74, .15); }
+  @media (max-width: 700px) {
+    .tally { grid-template-columns: 1fr; }
+    .tally div + div { border-inline-start: 0; border-top: 2px dashed var(--line); }
+    .tally div { padding: 18px 20px; }
+  }
+
   .contact { background: var(--olive); color: #fff; }
   .contact h2 { color: #fff; }
   .contact p { color: #dfe8e1; max-width: 52ch; }
@@ -203,6 +220,18 @@
         </div>
       </div>
     </div>
+
+    <section class="proof" id="numbers" aria-labelledby="numbers-title" hidden>
+      <div class="wrap">
+        <h2 id="numbers-title" class="sr">سيرو بالأرقام</h2>
+        <div class="tally">
+          <div><b id="n-devices"></b><span>أجهزة فتحت سيرو خلال آخر 30 يوماً</span><small id="n-split"></small></div>
+          <div><b id="n-downloads"></b><span>تنزيلات للبرنامج والتطبيق منذ الإطلاق</span><small>من موقعنا وصفحة الإصدارات</small></div>
+          <div><b id="n-releases"></b><span>تحديثات للبرنامج منذ الإطلاق</span><small id="n-last"></small></div>
+        </div>
+        <p class="note"><i class="live" aria-hidden="true"></i>أرقام حقيقية تُحسب كل ساعة من طلبات التحديث والتنزيل على موقعنا، بلا أي شيء عنك أو عن محلك. <a href="privacy.html">كيف نعدّها؟</a></p>
+      </div>
+    </section>
 
     <section class="shots" id="inside">
       <div class="wrap">
@@ -273,6 +302,26 @@
       const mb = (n) => '<span dir="ltr">' + Math.round(n / 1048576) + " MB</span>";
       document.getElementById("version").textContent = "الإصدار " + v;
       document.getElementById("meta").innerHTML = "ويندوز 10 أو 11 · " + (size ? mb(size) : "") + " · الإصدار " + v;
+    })
+    .catch(() => {});
+
+  // The numbers band: shown only when stats.json (deploy/site/stats.py in Siro, hourly) answers. Nothing is ever made up.
+  fetch("download/stats.json", { cache: "no-cache" })
+    .then((r) => (r.ok ? r.json() : Promise.reject()))
+    .then((s) => {
+      const n = (x) => Number(x).toLocaleString("en-US");
+      const d = s.devices30 || {};
+      if (!s.downloads || !(d.desktop + d.phone)) return;
+      const set = (id, text) => { document.getElementById(id).textContent = text; };
+      set("n-devices", n(d.desktop + d.phone));
+      set("n-split", n(d.desktop) + " كمبيوتر · " + n(d.phone) + " جوال");
+      set("n-downloads", n(s.downloads));
+      set("n-releases", n(s.releases));
+      if (s.lastRelease) {
+        const days = Math.floor((Date.now() - Date.parse(s.lastRelease)) / 86400000);
+        set("n-last", "آخرها " + (days < 1 ? "اليوم" : days < 2 ? "أمس" : days < 3 ? "قبل يومين" : days <= 10 ? "قبل " + days + " أيام" : "قبل " + days + " يوماً"));
+      }
+      document.getElementById("numbers").hidden = false;
     })
     .catch(() => {});
 </script>
