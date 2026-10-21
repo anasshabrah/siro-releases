@@ -325,7 +325,7 @@
   // Ads: Meta appends ?fbclid=… to a click out of an ad. It rides the download (the exe link's query, which the site's
   // log keeps) and the Play link's referrer (the app reads it back once); Siro's deploy/site/meta.py then tells Meta
   // which ads brought devices that run Siro. The pixel only sees visits and download taps, and loads after the page.
-  const PIXEL_ID = "";
+  const PIXEL_ID = "933631139603771"; // «Siro — sirobusiness.com» in Habrah LLC's Events Manager
   const fbclid = (/[?&]fbclid=([\w-]{8,255})(?:&|$)/.exec(location.search) || [])[1];
   if (fbclid) {
     document.getElementById("download").href += "?fbclid=" + fbclid;
