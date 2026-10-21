@@ -80,6 +80,8 @@ figcaption { font-size: 15px; color: var(--muted); margin-top: 8px; }
 .pager .next { text-align: end; }
 
 footer { padding: 0 0 40px; font-size: 14px; color: var(--muted); }
+footer .yt { display: inline-flex; vertical-align: middle; color: var(--muted); }
+footer .yt:hover { color: var(--olive); }
 
 /* search: a box in the header of every page, a big one on the front page, results drop under it */
 .search { position: relative; flex: 1; max-width: 440px; }
