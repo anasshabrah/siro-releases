@@ -308,14 +308,12 @@
     .then((r) => (r.ok ? r.json() : Promise.reject()))
     .then((s) => {
       const n = (x) => Number(x).toLocaleString("en-US");
-      // devices that ran Siro, each once by its installation's number; until those numbers have come in from the new
-      // versions, the devices that used it yesterday (never downloads: a download is not a user)
-      const all = (o) => (o ? o.desktop + o.phone : 0);
-      const since = all(s.users) >= all(s.daily), c = since ? s.users : s.daily;
-      if (!c || !all(c)) return;
+      // devices that ever ran Siro, each once, even those that stopped (never downloads: a download is not a user)
+      const c = s.users, all = c ? c.desktop + c.phone : 0;
+      if (!all) return;
       const set = (id, text) => { document.getElementById(id).textContent = text; };
-      set("n-users", n(all(c)));
-      set("n-users-label", since ? "أجهزة استخدمت سيرو منذ الإطلاق" : "أجهزة استخدمت سيرو أمس");
+      set("n-users", n(all));
+      set("n-users-label", "أجهزة استخدمت سيرو منذ الإطلاق");
       set("n-users-split", n(c.desktop) + " كمبيوتر · " + n(c.phone) + " جوال");
       document.getElementById("numbers").hidden = false;
     })
