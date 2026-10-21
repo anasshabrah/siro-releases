@@ -59,6 +59,11 @@ kbd { font: 600 13px/1 "IBM Plex Sans Arabic", sans-serif; border: 1px solid var
 figure { margin: 22px 0 26px; }
 figure img { border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 10px 30px rgba(22, 32, 27, .08); }
 figcaption { font-size: 15px; color: var(--muted); margin-top: 8px; }
+figure.video a { position: relative; display: block; }
+figure.video img { aspect-ratio: 16 / 9; width: 100%; height: auto; object-fit: cover; }
+figure.video a::after { content: ""; position: absolute; top: 50%; left: 50%; width: 72px; height: 50px; transform: translate(-50%, -50%); border-radius: 14px; transition: background-color .15s;
+  background: rgba(22, 32, 27, .78) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M8 5v14l11-7z'/%3E%3C/svg%3E") center / 28px no-repeat; }
+figure.video a:hover::after, figure.video a:focus-visible::after { background-color: var(--olive); }
 .phones { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin: 22px 0 26px; }
 .phones figure { margin: 0; }
 .phones img { border-radius: 22px; border: 5px solid var(--ink); }
