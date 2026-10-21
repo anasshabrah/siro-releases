@@ -138,12 +138,13 @@
   /* the numbers: real counts from stats.json, hidden until they arrive */
   .proof { padding: 0 0 64px; }
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-  .tally { display: grid; grid-template-columns: 1fr; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 10px 24px rgba(22, 32, 27, .06); }
+  .tally { display: grid; grid-template-columns: 1.5fr 1fr 1fr; align-items: center; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 10px 24px rgba(22, 32, 27, .06); }
   .tally div { padding: 22px 26px; }
   .tally div + div { border-inline-start: 2px dashed var(--line); }
   .tally b { display: block; font: 700 clamp(36px, 5vw, 52px)/1.1 "Reem Kufi", "IBM Plex Sans Arabic", sans-serif; color: var(--olive-deep); font-variant-numeric: tabular-nums; }
   .tally span { display: block; margin-top: 6px; font-size: 16px; line-height: 1.5; }
   .tally small { display: block; margin-top: 4px; font-size: 14px; color: var(--muted); }
+  .tally div + div b { font-size: clamp(28px, 3.6vw, 38px); color: var(--ink); }
   .proof .note { margin-top: 14px; font-size: 14px; color: var(--muted); }
   .proof .live { display: inline-block; vertical-align: middle; margin-inline-end: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--wa); box-shadow: 0 0 0 4px rgba(31, 122, 74, .15); }
   @media (max-width: 700px) {
@@ -225,7 +226,9 @@
       <div class="wrap">
         <h2 id="numbers-title" class="sr">سيرو بالأرقام</h2>
         <div class="tally">
-          <div><b id="n-users"></b><span id="n-users-label"></span><small id="n-users-split"></small></div>
+          <div><b id="n-users"></b><span>جهاز استخدم سيرو منذ الإطلاق</span><small>كل جهاز يُعدّ مرة واحدة، حتى لو توقّف</small></div>
+          <div><b id="n-desktop"></b><span>على الكمبيوتر</span><small>برنامج ويندوز</small></div>
+          <div><b id="n-phone"></b><span>على الجوال</span><small>تطبيق أندرويد</small></div>
         </div>
         <p class="note"><i class="live" aria-hidden="true"></i>أرقام حقيقية تُحسب كل ساعة من فحص التحديثات: كل جهاز يُعدّ مرة واحدة برقم عشوائي لتثبيته، بلا أي شيء عنك أو عن محلك. <a href="privacy.html">كيف نعدّها؟</a></p>
       </div>
@@ -313,11 +316,39 @@
       if (!all) return;
       const set = (id, text) => { document.getElementById(id).textContent = text; };
       set("n-users", n(all));
-      set("n-users-label", "أجهزة استخدمت سيرو منذ الإطلاق");
-      set("n-users-split", n(c.desktop) + " كمبيوتر · " + n(c.phone) + " جوال");
+      set("n-desktop", n(c.desktop));
+      set("n-phone", n(c.phone));
       document.getElementById("numbers").hidden = false;
     })
     .catch(() => {});
+
+  // Ads: Meta appends ?fbclid=… to a click out of an ad. It rides the download (the exe link's query, which the site's
+  // log keeps) and the Play link's referrer (the app reads it back once); Siro's deploy/site/meta.py then tells Meta
+  // which ads brought devices that run Siro. The pixel only sees visits and download taps, and loads after the page.
+  const PIXEL_ID = "";
+  const fbclid = (/[?&]fbclid=([\w-]{8,255})(?:&|$)/.exec(location.search) || [])[1];
+  if (fbclid) {
+    document.getElementById("download").href += "?fbclid=" + fbclid;
+    for (const a of document.querySelectorAll('a[href^="https://play.google.com/"]')) a.href += "&referrer=" + encodeURIComponent("fbclid=" + fbclid);
+  }
+  if (PIXEL_ID) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(window);
+    fbq("init", PIXEL_ID);
+    fbq("track", "PageView");
+    addEventListener("load", () => {
+      const s = document.createElement("script");
+      s.async = true;
+      s.src = "https://connect.facebook.net/en_US/fbevents.js";
+      document.head.appendChild(s);
+    });
+    // a download tap: the last step a browser sees (installs and use come from meta.py)
+    document.addEventListener("click", (ev) => {
+      const a = ev.target.closest('#download, a[href^="https://play.google.com/"]');
+      if (a) fbq("track", "Lead", { content_name: a.id === "download" ? "windows" : "android" });
+    });
+  }
 </script>
 </body>
 </html>
