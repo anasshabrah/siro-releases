@@ -164,6 +164,9 @@
 
   footer { padding: 28px 0 40px; font-size: 14px; color: var(--muted); }
   footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; }
+  footer .end { display: inline-flex; align-items: center; gap: 14px; }
+  footer .yt { display: inline-flex; color: var(--muted); }
+  footer .yt:hover { color: var(--olive-deep); }
 
   @media (max-width: 860px) {
     .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 12px; }
@@ -182,7 +185,7 @@
 <body>
   <header class="wrap top">
     <a class="brand" href="./"><img src="img/apple-touch-icon.png" alt="">سيرو</a>
-    <nav aria-label="روابط الصفحة"><a href="#inside">ما فيه</a><a href="guide/">المساعدة</a><a href="https://www.youtube.com/@siro-sy" rel="noopener">فيديو</a><a href="#contact">تواصل</a></nav>
+    <nav aria-label="روابط الصفحة"><a href="#inside">ما فيه</a><a href="guide/">المساعدة</a><a href="#contact">تواصل</a></nav>
   </header>
 
   <main>
@@ -200,7 +203,7 @@
             أندرويد على Google Play
           </a>
           <p class="meta" id="meta">ويندوز 10 أو 11 · نحو 120 ميغابايت</p>
-          <p class="meta"><a href="guide/start.html#install">طريقة التثبيت</a> · <a href="guide/">المساعدة</a> · <a href="https://www.youtube.com/@siro-sy" rel="noopener">شروحات بالفيديو</a> · <a href="guide/new.html">ما الجديد</a></p>
+          <p class="meta"><a href="guide/start.html#install">طريقة التثبيت</a> · <a href="guide/">المساعدة</a> · <a href="guide/new.html">ما الجديد</a></p>
         </div>
       </div>
 
@@ -277,10 +280,9 @@
     <section class="contact" id="contact">
       <div class="wrap">
         <h2>تواصل معنا</h2>
-        <p>سؤال، اقتراح، أو شيء لم يعمل كما توقعت؟ راسلنا مباشرة، أو شاهد طريقة الاستخدام بالفيديو.</p>
+        <p>سؤال، اقتراح، أو شيء لم يعمل كما توقعت؟ راسلنا مباشرة.</p>
         <div class="links">
           <a href="mailto:syriandealer@gmail.com?subject=%D8%B3%D9%8A%D8%B1%D9%88">بريد <span dir="ltr">syriandealer@gmail.com</span></a>
-          <a class="mail" href="https://www.youtube.com/@siro-sy" rel="noopener">شروحات بالفيديو على يوتيوب</a>
         </div>
       </div>
     </section>
@@ -289,7 +291,7 @@
   <footer>
     <div class="wrap">
       <span>© 2026 Anass Habrah · مجاني للاستخدام والمشاركة كما هو · <a href="terms.html">شروط الاستخدام</a> · <a href="privacy.html">الخصوصية</a> · <a href="license.html">الرخصة</a></span>
-      <span id="version"></span>
+      <span class="end"><a class="yt" href="https://www.youtube.com/@siro-sy" rel="noopener" title="سيرو على يوتيوب" aria-label="سيرو على يوتيوب"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .6 12a31 31 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-4.8 31 31 0 0 0-.4-4.8zM9.7 15.1V8.9l5.8 3.1z"/></svg></a><span id="version"></span></span>
     </div>
   </footer>
 
