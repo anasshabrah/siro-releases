@@ -55,6 +55,9 @@ kbd { font: 600 13px/1 "IBM Plex Sans Arabic", sans-serif; border: 1px solid var
 [dir="rtl"] .note { border-radius: 10px 0 0 10px; }
 .device { background: var(--olive-soft); border: 1px solid var(--line); padding: 12px 16px; border-radius: 10px; margin: 18px 0; }
 .device.desktop { background: var(--paper); }
+/* the home page points phone visitors at the phone page (shown, never a redirect) */
+.phone-visit { display: none; }
+@media (max-width: 760px), (pointer: coarse) and (max-width: 1100px) { .phone-visit { display: block; } }
 
 figure { margin: 22px 0 26px; }
 figure img { border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 10px 30px rgba(22, 32, 27, .08); }
