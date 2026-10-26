@@ -158,6 +158,13 @@
     .tally div { padding: 18px 20px; }
   }
 
+  .faq .wrap { max-width: 820px; }
+  .faq details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+  .faq summary { font-weight: 600; font-size: 19px; cursor: pointer; }
+  .faq summary::marker { color: var(--olive); }
+  .faq details p, .faq details ul { color: var(--muted); font-size: 16px; margin: 10px 0 0; }
+  .faq details ul { padding-inline-start: 22px; }
+  .faq details a { color: var(--olive); }
   .contact { background: var(--olive); color: #fff; }
   .contact h2 { color: #fff; }
   .contact p { color: #dfe8e1; max-width: 52ch; }
@@ -283,6 +290,37 @@
     </section>
 
 
+
+    <section class="faq" id="faq">
+      <div class="wrap">
+        <h2>قبل أن تبدأ</h2>
+        <details>
+          <summary>إذا توقف سيرو أو توقف دعمه، هل يتوقف شغلي؟</summary>
+          <p>لا. سيرو ليس اشتراكاً ولا برنامجاً على الإنترنت: يعمل كله على جهازك أو جوالك، بلا تفعيل ولا مدة تنتهي، ولا يحتاج خادماً لنا. لو توقف كل شيء من جهتنا يبقى البرنامج المثبّت عندك يعمل كما هو اليوم.</p>
+          <ul>
+            <li>احتفظ بملف التثبيت وبنسخة من بياناتك على فلاشة (<a href="guide/backup.html#desktop">النسخ الاحتياطي</a>): معك البرنامج والبيانات، ولا تحتاج موقعنا ولا تحتاجنا.</li>
+            <li>الإنترنت يلزم فقط للتحديثات والمساعد والمزامنة عبر Google Drive (وهي على حسابك أنت).</li>
+          </ul>
+          <p>لا أحد يضمن المستقبل مئة بالمئة، ولذلك صُمّم سيرو ليعمل دوننا.</p>
+        </details>
+        <details>
+          <summary>بياناتي ملك من؟ وهل أستطيع إخراجها؟</summary>
+          <p>بياناتك ملكك وحدك، ومحفوظة على أجهزتك لا على خادم عندنا، ولا يرسل البرنامج بياناتك التجارية إلينا (<a href="privacy.html">الخصوصية</a>).</p>
+          <ul>
+            <li>الأصناف والزبائن والموردون تُصدَّر إلى Excel (<a href="guide/excel.html#lists">نقل البيانات</a>)، والقيود والأرصدة وميزان المراجعة من التقارير (<a href="guide/money.html#reports">التقارير</a>).</li>
+            <li>النسخ الاحتياطية مشفّرة بكلمة سر لا يعرفها غيرك، على جهازك أو فلاشتك أو Google Drive الخاص بك.</li>
+          </ul>
+        </details>
+        <details>
+          <summary>من وراء سيرو؟</summary>
+          <ul>
+            <li>سيرو تابع لشركة <b>Habrah LLC</b>، شركة مسجّلة رسمياً في الولايات المتحدة، وهي التي توقّع البرنامج رقمياً وتنشره على Google Play.</li>
+            <li>نفتح فرعاً للشركة في سوريا، وبعد انتهاء تأسيسه نتقدّم بطلب ترخيص البرنامج من وزارة المالية السورية.</li>
+            <li>مكان الشركة لا يؤثر على عملك اليومي: البرنامج لا يتصل بأي خادم ليعمل.</li>
+          </ul>
+        </details>
+      </div>
+    </section>
 
     <section class="contact" id="contact">
       <div class="wrap">
