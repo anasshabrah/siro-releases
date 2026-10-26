@@ -1,5 +1,5 @@
 رخصة استخدام برنامج سيرو (Siro)
-الإصدار 2 · حقوق النشر © 2026 Anass Habrah. جميع الحقوق محفوظة.
+الإصدار 3 · حقوق النشر © 2026 Habrah LLC. جميع الحقوق محفوظة.
 
 1. المنح: يحق لك تثبيت سيرو واستخدامه مجاناً، على أي عدد من الأجهزة، لأي نشاط شخصي أو تجاري.
 2. التوزيع: يحق لك نسخ ملف التثبيت الأصلي ومشاركته مع غيرك مجاناً، بشرط ألا يُعدَّل وألا يُطلب مقابله أي مبلغ.
@@ -15,7 +15,7 @@
 ---
 
 Siro licence agreement
-Version 2 · Copyright © 2026 Anass Habrah. All rights reserved.
+Version 3 · Copyright © 2026 Habrah LLC. All rights reserved.
 
 1. Grant: you may install and use Siro free of charge, on any number of devices, for any personal or business purpose.
 2. Distribution: you may copy and share the original, unmodified installer with others, free of charge.
