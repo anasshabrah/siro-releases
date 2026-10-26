@@ -10,7 +10,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"سيرو","item":"https://sirobusiness.com/"},{"@type":"ListItem","position":2,"name":"المساعدة","item":"https://sirobusiness.com/guide/"},{"@type":"ListItem","position":3,"name":"Excel ونقل البيانات","item":"https://sirobusiness.com/guide/excel.html"}]}</script>
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="stylesheet" href="../fonts/fonts.css">
-<link rel="stylesheet" href="help.css?v=dbbece52">
+<link rel="stylesheet" href="help.css?v=085355e0">
 </head>
 <body>
 <header class="top"><div class="wrap">
@@ -32,5 +32,8 @@ const hits=all.map(d=>{let s=0;for(const w of words){if(d.n.includes(w))s+=3;els
 list.innerHTML=hits.length?hits.map(([,d])=>'<li><a href="'+d.u+'">'+d.t+'<small>'+d.s+'</small></a></li>').join(""):'<li class="none">ما وجدنا جواباً. جرّب كلمة أخرى، أو اضغط زر المساعدة (؟) في البرنامج: يجيبك المساعد، أو سجّل ملاحظة صوتية للمطوّر.</li>';list.hidden=false};
 input.addEventListener("input",run);input.addEventListener("keydown",e=>{if(e.key==="Enter"){const a=list.querySelector("a");if(a)location.href=a.href}if(e.key==="Escape")list.hidden=true});
 document.addEventListener("click",e=>{if(!box.contains(e.target))list.hidden=true});const q=new URLSearchParams(location.search).get("q");if(q&&box.classList.contains("big")){input.value=q;run()}}})();</script>
+<script>(()=>{const n=navigator,u=n.userAgent,d=n.userAgentData,ios=/iPhone|iPad|iPod/.test(u)||(n.platform==="MacIntel"&&n.maxTouchPoints>1),hand=ios||/Android|Mobile|CrOS/i.test(u)||/Android/.test(d&&d.platform);
+const off=(sel,note)=>{for(const a of document.querySelectorAll(sel)){a.removeAttribute("href");a.insertAdjacentText("afterend"," ("+note+")")}};
+if(hand)off('a[href$=".exe"]',"يُنزّل على كمبيوتر ويندوز، لا على الجوال");if(ios)off('a[href^="https://play.google.com/"]',"لأندرويد فقط، ولا يوجد تطبيق للآيفون بعد")})();</script>
 </body>
 </html>
