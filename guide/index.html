@@ -17,7 +17,7 @@
   <a class="brand" href="../"><img src="../img/apple-touch-icon.png" alt="">سيرو</a>
   <a class="crumb" href="./">المساعدة</a>
   
-  <a class="dl" href="../">التنزيل</a>
+  <a class="dl" href="../">التحميل</a>
 </div></header>
 <div class="wrap layout">
   <nav class="toc" aria-label="أقسام المساعدة"><ul><li><a href="start.html">البداية</a></li><li><a href="sales.html">البيع اليومي</a></li><li><a href="purchases.html">الشراء والموردون</a></li><li><a href="stock.html">المخزون والأصناف</a></li><li><a href="custom.html">التصنيع والمنتجات المركّبة</a></li><li><a href="money.html">المال والتقارير</a></li><li><a href="excel.html">Excel ونقل البيانات</a></li><li><a href="settings.html">الإعدادات وطرق الدفع</a></li><li><a href="people.html">الإدارة والفريق</a></li><li><a href="fleet.html">النقل والأسطول</a></li><li><a href="ecommerce.html">المتجر الإلكتروني</a></li><li><a href="travel.html">السياحة والسفر</a></li><li><a href="phone.html">تطبيق الجوال والأجهزة</a></li><li><a href="backup.html">الأمان والنسخ الاحتياطي</a></li><li><a href="help.html">مشاكل وحلول</a></li><li><a href="new.html">ما الجديد</a></li></ul></nav>
@@ -35,6 +35,6 @@ input.addEventListener("input",run);input.addEventListener("keydown",e=>{if(e.ke
 document.addEventListener("click",e=>{if(!box.contains(e.target))list.hidden=true});const q=new URLSearchParams(location.search).get("q");if(q&&box.classList.contains("big")){input.value=q;run()}}})();</script>
 <script>(()=>{const n=navigator,u=n.userAgent,d=n.userAgentData,ios=/iPhone|iPad|iPod/.test(u)||(n.platform==="MacIntel"&&n.maxTouchPoints>1),hand=ios||/Android|Mobile|CrOS/i.test(u)||/Android/.test(d&&d.platform);
 const off=(sel,note)=>{for(const a of document.querySelectorAll(sel)){a.removeAttribute("href");a.insertAdjacentText("afterend"," ("+note+")")}};
-if(hand)off('a[href$=".exe"]',"يُنزّل على كمبيوتر ويندوز، لا على الجوال");if(ios)off('a[href^="https://play.google.com/"]',"لأندرويد فقط، ولا يوجد تطبيق للآيفون بعد")})();</script>
+if(hand)off('a[href$=".exe"]',"نسخة ويندوز تُحمَّل على الكمبيوتر، لا على الجوال");if(ios)off('a[href^="https://play.google.com/"]',"لأندرويد فقط، ولا يوجد تطبيق للآيفون بعد")})();</script>
 </body>
 </html>
