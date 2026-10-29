@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <script>/* the site moved: old github.io links land on the same page at sirobusiness.com */if(location.hostname.endsWith("github.io"))location.replace("https://sirobusiness.com"+location.pathname.replace(/^\/siro-releases/,"")+location.search+location.hash)</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>/* which download fits this device (copy in Siro's scripts/help.mjs): `handheld` a phone, tablet or Chromebook (an iPad says it is a Mac, but has touch; Android's «desktop site» says Linux, but not to userAgentData), `ios` no app for it yet, `nowin` Mac or Linux, `oldwin` Windows 7/8 (Chrome says «NT 10.0» there, platformVersion 0.x tells) */(()=>{const n=navigator,u=n.userAgent,d=n.userAgentData,c=document.documentElement.classList,ios=/iPhone|iPad|iPod/.test(u)||(n.platform==="MacIntel"&&n.maxTouchPoints>1);if(ios)c.add("ios");if(ios||/Android|Mobile|CrOS/i.test(u)||/Android/.test(d&&d.platform))c.add("handheld");else if(!/Windows/.test(u))c.add("nowin");else if(/Windows NT [56]\./.test(u))c.add("oldwin");else if(d&&d.platform==="Windows"&&d.getHighEntropyValues)d.getHighEntropyValues(["platformVersion"]).then(v=>{if(/^0\./.test(v.platformVersion))c.add("oldwin")},()=>{})})();</script>
+<script>/* which download fits this device (copy in Siro's scripts/help.mjs): `handheld` a phone, tablet or Chromebook (an iPad says it is a Mac, but has touch; Android's «desktop site» says Linux, but not to userAgentData), `ios` no app for it yet, `nowin` Mac or Linux, `win` Windows 10/11 (only the .exe), `oldwin` Windows 7/8 (Chrome says «NT 10.0» there, platformVersion 0.x tells) */(()=>{const n=navigator,u=n.userAgent,d=n.userAgentData,c=document.documentElement.classList,ios=/iPhone|iPad|iPod/.test(u)||(n.platform==="MacIntel"&&n.maxTouchPoints>1);if(ios)c.add("ios");if(ios||/Android|Mobile|CrOS/i.test(u)||/Android/.test(d&&d.platform))c.add("handheld");else if(!/Windows/.test(u))c.add("nowin");else if(/Windows NT [56]\./.test(u))c.add("oldwin");else{c.add("win");if(d&&d.platform==="Windows"&&d.getHighEntropyValues)d.getHighEntropyValues(["platformVersion"]).then(v=>{if(/^0\./.test(v.platformVersion))c.replace("win","oldwin")},()=>{})}})();</script>
 <title>برنامج محاسبة ومخزون مجاني للمحلات في سوريا | سيرو</title>
 <meta name="description" content="سيرو برنامج محاسبة مجاني للمحلات والشركات في سوريا، على ويندوز وأندرويد: مبيعات ونقطة بيع (كاشير)، مخزون ومستودعات، مشتريات وديون وتقارير، بالليرة السورية والدولار. يعمل بلا إنترنت وبياناتك تبقى عندك.">
 <link rel="canonical" href="https://sirobusiness.com/">
@@ -89,9 +89,11 @@
   .cta .btn { flex: 1 1 0; justify-content: center; white-space: nowrap; max-width: 280px; }
   /* on a phone or a tablet: no Windows download (people installed the .exe on their phones); Google Play is the button */
   .pc-only-note, .ios-note, .nowin-note, .oldwin-note { display: none; }
-  .handheld #download, .handheld #meta { display: none; }
+  /* each device sees only the download it can use: Windows 10/11 the .exe; anything else Google Play and a note */
+  .win .cta .btn.ghost { display: none; }
+  .handheld #download, .handheld #meta, .nowin #download, .nowin #meta, .oldwin #download, .oldwin #meta { display: none; }
   .handheld .pc-only-note { display: block; }
-  .handheld .cta .btn.ghost { background: var(--olive); color: #fff; border-color: var(--olive); box-shadow: 0 6px 0 var(--olive-deep); max-width: none; }
+  .handheld .cta .btn.ghost, .nowin .cta .btn.ghost, .oldwin .cta .btn.ghost { background: var(--olive); color: #fff; border-color: var(--olive); box-shadow: 0 6px 0 var(--olive-deep); max-width: none; }
   /* an iPhone or iPad: Google Play is not for it either, and there is no App Store app yet */
   .ios .cta .btn.ghost, .ios .pc-only-note { display: none; }
   .ios .ios-note, .nowin .nowin-note, .oldwin .oldwin-note { display: block; color: var(--ink); }
@@ -355,7 +357,7 @@
 
 <script>
   // on a phone or tablet «طريقة التثبيت» is the app's, not the Windows installer's
-  if (document.documentElement.classList.contains("handheld")) document.getElementById("how").href = "guide/phone.html#install";
+  if (!document.documentElement.classList.contains("win")) document.getElementById("how").href = "guide/phone.html#install"; // only Google Play is offered there
 
   // The latest version and size, from the update file the program reads. The page works the same if this fails.
   const get = (f) => fetch("download/" + f, { cache: "no-cache" }).then((r) => (r.ok ? r.text() : Promise.reject()));
