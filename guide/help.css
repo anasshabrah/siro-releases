@@ -98,11 +98,16 @@ footer .yt:hover { color: var(--olive); }
 .search .none { padding: 10px 12px; color: var(--muted); font-size: 14px; }
 .search.big { max-width: none; margin: 22px 0 6px; }
 .search.big input { font-size: 18px; padding: 15px 18px; border-radius: 12px; background: var(--paper); }
-/* a page's own contents, when it has more than two articles */
-/* each link a chip: as plain words in a wrapping row they read as one sentence, above all on a phone */
-.intoc { list-style: none; padding: 14px; margin: 18px 0 8px; background: var(--ground); border-radius: 12px; display: flex; flex-wrap: wrap; gap: 8px; font-size: 15px; line-height: 1.5; }
-.intoc a { display: block; padding: 6px 12px; background: var(--paper); border: 1px solid var(--line); border-radius: 999px; text-decoration: none; }
-.intoc a:hover { border-color: var(--olive); }
+/* a section's page: its articles, each a page of its own, with the opening of each */
+.arts { list-style: none; padding: 0; margin: 22px 0 0; border-top: 1px solid var(--line); }
+.arts a { display: block; padding: 14px 6px; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; }
+.arts a:hover { background: var(--ground); }
+.arts b { display: block; font-size: 18px; margin-bottom: 2px; }
+.arts span { display: block; color: var(--muted); font-size: 15px; line-height: 1.6; }
+/* an article's way back to its section, above its heading */
+.up { font-size: 15px; margin-bottom: 6px; }
+.up a { color: var(--muted); text-decoration: none; }
+.up a:hover { color: var(--ink); }
 section { scroll-margin-top: 16px; }
 section:target h2 { color: var(--olive); }
 
