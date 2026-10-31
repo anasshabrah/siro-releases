@@ -6,9 +6,7 @@
 
 **[تنزيل سيرو لويندوز](https://sirobusiness.com/download/Siro-Setup.exe)**، ثم شغّل الملف. هذا الرابط يعطي دائماً آخر إصدار. البرنامج يحدّث نفسه تلقائياً حين يتصل بالإنترنت.
 
-للجوال والتابلت: **[تطبيق أندرويد](https://sirobusiness.com/download/Siro-Android.apk)**، ينبّهك التطبيق حين يصدر أحدث منه.
-
-ملف التثبيت غير موقّع بعد، لذلك قد يظهر تحذير ويندوز. اضغط «مزيد من المعلومات» ثم «تشغيل على أي حال».
+للجوال والتابلت: **[سيرو على Google Play](https://play.google.com/store/apps/details?id=com.habrah.siro)**، ويتحدّث من المتجر.
 
 ## المساعدة
 
@@ -22,4 +20,4 @@
 
 ---
 
-Siro is a free Syrian business management system (sales, purchases, inventory, accounting, point of sale) that runs offline. Download: https://sirobusiness.com/download/Siro-Setup.exe (always the latest version). Android app: https://sirobusiness.com/download/Siro-Android.apk. Free to use and share unmodified; see LICENSE.txt. Help centre: https://sirobusiness.com/guide/. This repository holds the website only; guide/ is generated from the program's repository, do not edit it here.
+Siro is a free Syrian business management system (sales, purchases, inventory, accounting, point of sale) that runs offline. Download: https://sirobusiness.com/download/Siro-Setup.exe (always the latest version). Android app: https://play.google.com/store/apps/details?id=com.habrah.siro. Free to use and share unmodified; see LICENSE.txt. Help centre: https://sirobusiness.com/guide/. This repository holds the website only; guide/ is generated from the program's repository, do not edit it here.
