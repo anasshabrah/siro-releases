@@ -14,6 +14,10 @@
 <url><loc>https://sirobusiness.com/guide/fleet.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/ecommerce.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/travel.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/service.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/rental.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/contracts.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/appointments.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/phone.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/backup.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/help.html</loc></url>
@@ -53,6 +57,7 @@
 <url><loc>https://sirobusiness.com/guide/sales-daily.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/sales-day.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/sales-restaurant.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/sales-messages.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/purchases-invoice.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/purchases-orders.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/purchases-return.html</loc></url>
@@ -95,6 +100,7 @@
 <url><loc>https://sirobusiness.com/guide/custom-quality.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/custom-maintenance.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/money-where.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/money-deferrals.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/money-reports.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/money-statements.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/money-chart.html</loc></url>
@@ -115,6 +121,7 @@
 <url><loc>https://sirobusiness.com/guide/money-fx.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/money-tax.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/excel-import.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/excel-import-errors.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/excel-lists.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/excel-ledger-sheet.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/excel-opening.html</loc></url>
@@ -131,6 +138,8 @@
 <url><loc>https://sirobusiness.com/guide/settings-loyalty.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/settings-integrations.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/settings-digests.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/settings-companies.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/settings-print-columns.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/settings-attachments.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/people-crm.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/people-reps.html</loc></url>
@@ -142,6 +151,7 @@
 <url><loc>https://sirobusiness.com/guide/people-claims.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/people-fingerprint.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/people-projects.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/people-notes.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/people-workflows.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/people-audit.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/fleet-trucks.html</loc></url>
@@ -164,6 +174,17 @@
 <url><loc>https://sirobusiness.com/guide/travel-cancel.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/travel-alerts.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/travel-profit.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/service-receive.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/service-stages.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/service-visits.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/service-warranty.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/service-collect.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/rental-hand-out.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/rental-return.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/contracts-new.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/contracts-renew.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/appointments-book.html</loc></url>
+<url><loc>https://sirobusiness.com/guide/appointments-day.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/phone-map.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/phone-install.html</loc></url>
 <url><loc>https://sirobusiness.com/guide/phone-language.html</loc></url>
