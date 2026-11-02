@@ -363,7 +363,10 @@
   const get = (f) => fetch("download/" + f, { cache: "no-cache" }).then((r) => (r.ok ? r.text() : Promise.reject()));
   get("latest.yml")
     .then((yml) => {
-      const v = (yml.match(/^version:\s*(\S+)/m) || [])[1];
+      const raw = (yml.match(/^version:\s*(\S+)/m) || [])[1];
+      // the feed holds the updater's form (2.1.0); people read 2.01 (Siro's CLAUDE.md, version numbers)
+      const [major, minor] = (raw || "").split(".");
+      const v = raw && major + "." + minor.padStart(2, "0");
       const size = Number((yml.match(/^\s+size:\s*(\d+)/m) || [])[1]);
       if (!v) return;
       const mb = (n) => '<span dir="ltr">' + Math.round(n / 1048576) + " MB</span>";
