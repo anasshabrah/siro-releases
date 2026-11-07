@@ -91,8 +91,7 @@
   .pc-only-note, .ios-note, .nowin-note, .oldwin-note { display: none; }
   /* each device sees only the download it can use: Windows 10/11 the .exe; anything else Google Play and a note */
   .win .cta .btn.ghost { display: none; }
-  .store img { display: block; height: 44px; width: auto; }
-  .handheld #download, .handheld #meta, .nowin #download, .nowin #meta, .oldwin #download, .oldwin #meta, .handheld .store, .nowin .store, .oldwin .store { display: none; }
+  .handheld #download, .handheld #meta, .nowin #download, .nowin #meta, .oldwin #download, .oldwin #meta { display: none; }
   .handheld .pc-only-note { display: block; }
   .handheld .cta .btn.ghost, .nowin .cta .btn.ghost, .oldwin .cta .btn.ghost { background: var(--olive); color: #fff; border-color: var(--olive); box-shadow: 0 6px 0 var(--olive-deep); max-width: none; }
   /* an iPhone or iPad: Google Play is not for it either, and there is no App Store app yet */
@@ -191,6 +190,16 @@
   footer .end { display: inline-flex; align-items: center; gap: 14px; }
   footer .yt { display: inline-flex; color: var(--muted); }
   footer .yt:hover { color: var(--olive-deep); }
+  /* the three stores, one row on every device: the official badges at one height */
+  .stores { flex-basis: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding-bottom: 20px; margin-bottom: 8px; border-bottom: 1px solid var(--line); }
+  .stores a, .stores .soon { display: block; border-radius: 7px; transition: transform .12s; }
+  .stores a:hover { transform: translateY(-2px); }
+  .stores img { display: block; height: 40px; width: auto; }
+  @media (max-width: 520px) { .stores { justify-content: center; } }
+  /* no iPhone app yet (Apple is reviewing it): the badge waits, dimmed, with no link */
+  .stores .soon { position: relative; }
+  .stores .soon img { opacity: .4; filter: grayscale(1); }
+  .stores .soon b { position: absolute; top: -9px; inset-inline-start: -6px; background: var(--olive); color: #fff; font-size: 11px; font-weight: 600; line-height: 18px; padding: 0 8px; border-radius: 9px; }
 
   @media (max-width: 860px) {
     .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 12px; }
@@ -226,7 +235,6 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#3DDC84" d="M17.6 9.48l1.84-3.18a.38.38 0 0 0-.66-.38l-1.86 3.22A11.4 11.4 0 0 0 12 8.13c-1.76 0-3.42.39-4.92 1.01L5.22 5.92a.38.38 0 0 0-.66.38L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg>
             تحميل نسخة أندرويد
           </a>
-          <a class="store" href="https://apps.microsoft.com/detail/XPFD8M60P1GMW0?cid=sirobusiness" rel="noopener"><img src="img/ms-store-ar.svg" alt="احصل عليه من Microsoft Store" width="161" height="44"></a>
           <p class="meta" id="meta">ويندوز 10 أو 11 · نحو 110 ميغابايت</p>
           <p class="meta pc-only-note">نسخة ويندوز للكمبيوتر: افتح هذه الصفحة من الكمبيوتر لتحميلها.</p>
           <p class="meta ios-note">لا يوجد تطبيق لسيرو على الآيفون والآيباد بعد. يعمل على جوال أو تابلت أندرويد من Google Play، وعلى كمبيوتر ويندوز 10 أو 11.</p>
@@ -352,6 +360,11 @@
 
   <footer>
     <div class="wrap">
+      <nav class="stores" aria-label="سيرو في المتاجر">
+        <a href="https://play.google.com/store/apps/details?id=com.habrah.siro" rel="noopener"><img src="img/badge-google-play.png" alt="سيرو على Google Play" width="134" height="40"></a>
+        <a class="store" href="https://apps.microsoft.com/detail/XPFD8M60P1GMW0?cid=sirobusiness" rel="noopener"><img src="img/badge-microsoft-store.svg" alt="سيرو على Microsoft Store" width="146" height="40"></a>
+        <span class="soon" title="تطبيق الآيفون قريباً"><img src="img/badge-app-store.svg" alt="سيرو على App Store قريباً" width="120" height="40"><b>قريباً</b></span>
+      </nav>
       <span>© 2026 Habrah LLC · مجاني للاستخدام والمشاركة كما هو · <a href="terms.html">شروط الاستخدام</a> · <a href="privacy.html">الخصوصية</a> · <a href="license.html">الرخصة</a></span>
       <span class="end"><a class="yt" href="https://www.youtube.com/@siro-sy" target="_blank" rel="noopener" title="سيرو على يوتيوب" aria-label="سيرو على يوتيوب"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .6 12a31 31 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-4.8 31 31 0 0 0-.4-4.8zM9.7 15.1V8.9l5.8 3.1z"/></svg></a><a class="yt" href="https://www.facebook.com/siro.business" target="_blank" rel="noopener" title="سيرو على فيسبوك" aria-label="سيرو على فيسبوك"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg></a><span id="version"></span></span>
     </div>
