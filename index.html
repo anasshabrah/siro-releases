@@ -9,7 +9,7 @@
 <meta name="description" content="سيرو برنامج محاسبة مجاني للمحلات والشركات في سوريا، على ويندوز وأندرويد: مبيعات ونقطة بيع (كاشير)، مخزون ومستودعات، مشتريات وديون وتقارير، بالليرة السورية والدولار. يعمل بلا إنترنت وبياناتك تبقى عندك.">
 <link rel="canonical" href="https://sirobusiness.com/">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[
-{"@type":"Organization","@id":"https://sirobusiness.com/#org","name":"سيرو","alternateName":"Siro","url":"https://sirobusiness.com/","logo":"https://sirobusiness.com/img/apple-touch-icon.png","sameAs":["https://www.youtube.com/@siro-sy","https://www.facebook.com/siro.business","https://play.google.com/store/apps/details?id=com.habrah.siro"]},
+{"@type":"Organization","@id":"https://sirobusiness.com/#org","name":"سيرو","alternateName":"Siro","url":"https://sirobusiness.com/","logo":"https://sirobusiness.com/img/apple-touch-icon.png","sameAs":["https://www.youtube.com/@siro-sy","https://www.facebook.com/siro.business","https://play.google.com/store/apps/details?id=com.habrah.siro","https://apps.microsoft.com/detail/XPFD8M60P1GMW0"]},
 {"@type":"WebSite","@id":"https://sirobusiness.com/#site","name":"سيرو","url":"https://sirobusiness.com/","inLanguage":"ar","publisher":{"@id":"https://sirobusiness.com/#org"}},
 {"@type":"SoftwareApplication","name":"سيرو","alternateName":"Siro","url":"https://sirobusiness.com/","applicationCategory":"BusinessApplication","applicationSubCategory":"برنامج محاسبة ومخزون ونقطة بيع","operatingSystem":"Windows, Android","inLanguage":["ar","en"],"description":"برنامج محاسبة مجاني للمحلات والشركات في سوريا: مبيعات ونقطة بيع، مخزون ومستودعات، مشتريات وديون وتقارير، بالليرة السورية والدولار، ويعمل بلا إنترنت.","downloadUrl":"https://sirobusiness.com/download/Siro-Setup.exe","image":"https://sirobusiness.com/og.png?v=5","offers":{"@type":"Offer","price":"0","priceCurrency":"SYP"},"publisher":{"@id":"https://sirobusiness.com/#org"}}
 ]}</script>
@@ -91,7 +91,8 @@
   .pc-only-note, .ios-note, .nowin-note, .oldwin-note { display: none; }
   /* each device sees only the download it can use: Windows 10/11 the .exe; anything else Google Play and a note */
   .win .cta .btn.ghost { display: none; }
-  .handheld #download, .handheld #meta, .nowin #download, .nowin #meta, .oldwin #download, .oldwin #meta { display: none; }
+  .store img { display: block; height: 44px; width: auto; }
+  .handheld #download, .handheld #meta, .nowin #download, .nowin #meta, .oldwin #download, .oldwin #meta, .handheld .store, .nowin .store, .oldwin .store { display: none; }
   .handheld .pc-only-note { display: block; }
   .handheld .cta .btn.ghost, .nowin .cta .btn.ghost, .oldwin .cta .btn.ghost { background: var(--olive); color: #fff; border-color: var(--olive); box-shadow: 0 6px 0 var(--olive-deep); max-width: none; }
   /* an iPhone or iPad: Google Play is not for it either, and there is no App Store app yet */
@@ -225,6 +226,7 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#3DDC84" d="M17.6 9.48l1.84-3.18a.38.38 0 0 0-.66-.38l-1.86 3.22A11.4 11.4 0 0 0 12 8.13c-1.76 0-3.42.39-4.92 1.01L5.22 5.92a.38.38 0 0 0-.66.38L6.4 9.48A10.8 10.8 0 0 0 1 18h22a10.8 10.8 0 0 0-5.4-8.52zM7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z"/></svg>
             تحميل نسخة أندرويد
           </a>
+          <a class="store" href="https://apps.microsoft.com/detail/XPFD8M60P1GMW0?cid=sirobusiness" rel="noopener"><img src="img/ms-store-ar.svg" alt="احصل عليه من Microsoft Store" width="161" height="44"></a>
           <p class="meta" id="meta">ويندوز 10 أو 11 · نحو 110 ميغابايت</p>
           <p class="meta pc-only-note">نسخة ويندوز للكمبيوتر: افتح هذه الصفحة من الكمبيوتر لتحميلها.</p>
           <p class="meta ios-note">لا يوجد تطبيق لسيرو على الآيفون والآيباد بعد. يعمل على جوال أو تابلت أندرويد من Google Play، وعلى كمبيوتر ويندوز 10 أو 11.</p>
@@ -414,8 +416,8 @@
     });
     // a download tap: the last step a browser sees (installs and use come from meta.py)
     document.addEventListener("click", (ev) => {
-      const a = ev.target.closest('#download, a[href^="https://play.google.com/"]');
-      if (a) fbq("track", "Lead", { content_name: a.id === "download" ? "windows" : "android" });
+      const a = ev.target.closest('#download, .store, a[href^="https://play.google.com/"]');
+      if (a) fbq("track", "Lead", { content_name: a.id === "download" ? "windows" : a.classList.contains("store") ? "microsoft-store" : "android" });
     });
   }
 </script>
