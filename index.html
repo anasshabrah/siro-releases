@@ -5,13 +5,13 @@
 <script>/* the site moved: old github.io links land on the same page at sirobusiness.com */if(location.hostname.endsWith("github.io"))location.replace("https://sirobusiness.com"+location.pathname.replace(/^\/siro-releases/,"")+location.search+location.hash)</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>/* which download fits this device (copy in Siro's scripts/help.mjs): `handheld` a phone, tablet or Chromebook (an iPad says it is a Mac, but has touch; Android's «desktop site» says Linux, but not to userAgentData), `ios` no app for it yet, `nowin` Mac or Linux, `win` Windows 10/11 (only the .exe), `oldwin` Windows 7/8 (Chrome says «NT 10.0» there, platformVersion 0.x tells) */(()=>{const n=navigator,u=n.userAgent,d=n.userAgentData,c=document.documentElement.classList,ios=/iPhone|iPad|iPod/.test(u)||(n.platform==="MacIntel"&&n.maxTouchPoints>1);if(ios)c.add("ios");if(ios||/Android|Mobile|CrOS/i.test(u)||/Android/.test(d&&d.platform))c.add("handheld");else if(!/Windows/.test(u))c.add("nowin");else if(/Windows NT [56]\./.test(u))c.add("oldwin");else{c.add("win");if(d&&d.platform==="Windows"&&d.getHighEntropyValues)d.getHighEntropyValues(["platformVersion"]).then(v=>{if(/^0\./.test(v.platformVersion))c.replace("win","oldwin")},()=>{})}})();</script>
-<title>برنامج محاسبة ومخزون مجاني للمحلات والمعامل والشركات في سوريا | سيرو</title>
+<title>برنامج محاسبة ومخزون ونظام ERP مجاني للمحلات والمعامل والشركات في سوريا | سيرو</title>
 <meta name="description" content="سيرو برنامج محاسبة مجاني للمحلات والمعامل والمطاعم والشركات في سوريا، على ويندوز وأندرويد: مبيعات ونقطة بيع (كاشير)، مخزون ومستودعات، مشتريات وديون وتقارير، بالليرة السورية والدولار. يعمل بلا إنترنت وبياناتك تبقى عندك.">
 <link rel="canonical" href="https://sirobusiness.com/">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[
 {"@type":"Organization","@id":"https://sirobusiness.com/#org","name":"سيرو","alternateName":"Siro","url":"https://sirobusiness.com/","logo":"https://sirobusiness.com/img/apple-touch-icon.png","sameAs":["https://www.youtube.com/@siro-sy","https://www.facebook.com/siro.business","https://play.google.com/store/apps/details?id=com.habrah.siro","https://apps.microsoft.com/detail/XPFD8M60P1GMW0"]},
 {"@type":"WebSite","@id":"https://sirobusiness.com/#site","name":"سيرو","url":"https://sirobusiness.com/","inLanguage":"ar","publisher":{"@id":"https://sirobusiness.com/#org"}},
-{"@type":"SoftwareApplication","name":"سيرو","alternateName":"Siro","url":"https://sirobusiness.com/","applicationCategory":"BusinessApplication","applicationSubCategory":"برنامج محاسبة ومخزون ونقطة بيع","operatingSystem":"Windows, Android","inLanguage":["ar","en"],"description":"برنامج محاسبة مجاني للمحلات والمعامل والمطاعم والشركات في سوريا: مبيعات ونقطة بيع، مخزون ومستودعات، مشتريات وديون وتقارير، بالليرة السورية والدولار، ويعمل بلا إنترنت.","downloadUrl":"https://sirobusiness.com/download/Siro-Setup.exe","image":"https://sirobusiness.com/og.png?v=6","offers":{"@type":"Offer","price":"0","priceCurrency":"SYP"},"publisher":{"@id":"https://sirobusiness.com/#org"}}
+{"@type":"SoftwareApplication","name":"سيرو","alternateName":["Siro","Siro ERP"],"url":"https://sirobusiness.com/","applicationCategory":"BusinessApplication","applicationSubCategory":"نظام ERP: محاسبة ومخزون ونقطة بيع وتصنيع","operatingSystem":"Windows, Android","inLanguage":["ar","en"],"description":"برنامج محاسبة مجاني للمحلات والمعامل والمطاعم والشركات في سوريا: مبيعات ونقطة بيع، مخزون ومستودعات، مشتريات وديون وتقارير، بالليرة السورية والدولار، ويعمل بلا إنترنت.","downloadUrl":"https://sirobusiness.com/download/Siro-Setup.exe","image":"https://sirobusiness.com/og.png?v=6","offers":{"@type":"Offer","price":"0","priceCurrency":"SYP"},"publisher":{"@id":"https://sirobusiness.com/#org"}}
 ]}</script>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="سيرو">
@@ -342,6 +342,16 @@
           <ul>
             <li>الأصناف والزبائن والموردون تُصدَّر إلى Excel (<a href="guide/excel.html#lists">نقل البيانات</a>)، والقيود والأرصدة وميزان المراجعة من التقارير (<a href="guide/money.html#reports">التقارير</a>).</li>
             <li>النسخ الاحتياطية مشفّرة بكلمة سر لا يعرفها غيرك، على جهازك أو فلاشتك أو Google Drive الخاص بك.</li>
+          </ul>
+        </details>
+        <details>
+          <summary>هل سيرو نظام ERP؟</summary>
+          <p>نعم. أقسام الشركة كلها في برنامج واحد وقاعدة بيانات واحدة، وكل عملية تُقيَّد في المحاسبة وحدها:</p>
+          <ul>
+            <li>البيع ونقطة البيع، والمشتريات، والمخزون والمستودعات، والتصنيع، والزبائن والموردون، والموظفون ورواتبهم، والتقارير.</li>
+            <li>تشغّل الأقسام التي يحتاجها عملك وتطفئ غيرها، وتعطي كل موظف صلاحيات قسمه فقط.</li>
+            <li>مصمّم للمحلات والشركات الصغيرة والمتوسطة، على الكمبيوتر والجوال، ويعمل بلا إنترنت.</li>
+            <li>لكل شركة ملفها الخاص، فلا قوائم مالية مجمّعة لعدة شركات.</li>
           </ul>
         </details>
         <details>
