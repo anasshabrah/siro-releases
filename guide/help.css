@@ -69,6 +69,10 @@ figure.video a::after { content: ""; position: absolute; top: 50%; left: 50%; wi
 figure.video a:hover::after, figure.video a:focus-visible::after { background-color: var(--olive); }
 /* a screen picture: the crop at its own size (taken at 2x), a click opens the whole screen */
 figure.shot img { max-width: 100%; height: auto; cursor: zoom-in; }
+/* the whole screen opens over the page (help.mjs ZOOM); a click or Esc closes it */
+dialog.zoom { padding: 0; border: 0; background: none; max-width: 96vw; max-height: 96vh; cursor: zoom-out; }
+dialog.zoom::backdrop { background: rgba(22, 32, 27, .85); }
+dialog.zoom img { display: block; max-width: 96vw; max-height: 96vh; width: auto; height: auto; border-radius: 8px; }
 
 .cards { list-style: none; padding: 0; margin: 28px 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
 .cards a { display: block; height: 100%; padding: 18px 20px; border: 1px solid var(--line); border-radius: 12px; color: var(--ink); text-decoration: none; transition: border-color .15s, background .15s; }

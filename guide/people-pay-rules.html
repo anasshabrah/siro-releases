@@ -22,7 +22,7 @@
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
 <link rel="stylesheet" href="../fonts/fonts.css">
-<link rel="stylesheet" href="help.css?v=077ac5da">
+<link rel="stylesheet" href="help.css?v=00965ad3">
 </head>
 <body>
 <header class="top"><div class="wrap">
@@ -48,5 +48,8 @@ document.addEventListener("click",e=>{if(!box.contains(e.target))list.hidden=tru
 <script>(()=>{const n=navigator,u=n.userAgent,d=n.userAgentData,ios=/iPhone|iPad|iPod/.test(u)||(n.platform==="MacIntel"&&n.maxTouchPoints>1),hand=ios||/Android|Mobile|CrOS/i.test(u)||/Android/.test(d&&d.platform);
 const off=(sel,note)=>{for(const a of document.querySelectorAll(sel)){a.removeAttribute("href");a.insertAdjacentText("afterend"," ("+note+")")}};
 if(hand)off('a[href$=".exe"]',"نسخة ويندوز تُحمَّل على الكمبيوتر، لا على الجوال");if(ios)off('a[href^="https://play.google.com/"]',"لأندرويد فقط، ولا يوجد تطبيق للآيفون بعد")})();</script>
+<dialog class="zoom" aria-label="الشاشة كاملة"><img alt=""></dialog><script>(()=>{const d=document.querySelector("dialog.zoom"),i=d.querySelector("img");
+document.addEventListener("click",e=>{const a=e.target.closest("figure.shot a");if(!a||e.ctrlKey||e.metaKey||e.shiftKey||!d.showModal)return;e.preventDefault();i.src=a.href;i.alt=a.querySelector("img").alt;d.showModal()});
+d.addEventListener("click",()=>d.close())})();</script>
 </body>
 </html>
