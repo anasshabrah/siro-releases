@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>محاسب سيرو: اختبار عملي للمحاسبين على برنامج سيرو</title>
+<meta name="description" content="محاسب سيرو للمحاسبين الذين يمسكون حسابات المحلات والمعامل والشركات في سوريا: اجتز اختبار سيرو العملي على ملف شركة حقيقي، ويجدك أصحاب الشركات في مدينتك.">
+<link rel="canonical" href="https://accountants.sirobusiness.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="سيرو">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:url" content="https://accountants.sirobusiness.com/">
+<meta property="og:title" content="محاسب سيرو">
+<meta property="og:description" content="اختبار عملي للمحاسبين على برنامج سيرو. من ينجح يظهر اسمه لأصحاب الشركات في مدينته.">
+<meta property="og:image" content="https://sirobusiness.com/og.png?v=6">
+<meta name="theme-color" content="#2f5d3a">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/img/icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preload" href="/fonts/plex-400-arabic.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"IBM Plex Sans Arabic";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/plex-400-arabic.woff2) format("woff2");unicode-range:U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC7, U+10EC9-10EEE, U+10EF0-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1}
+@font-face{font-family:"IBM Plex Sans Arabic";font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/plex-400-latin.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"IBM Plex Sans Arabic";font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/plex-600-arabic.woff2) format("woff2");unicode-range:U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC7, U+10EC9-10EEE, U+10EF0-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1}
+@font-face{font-family:"IBM Plex Sans Arabic";font-style:normal;font-weight:600;font-display:swap;src:url(/fonts/plex-600-latin.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Reem Kufi";font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/kufi-700-arabic.woff2) format("woff2");unicode-range:U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC7, U+10EC9-10EEE, U+10EF0-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1}
+@font-face{font-family:"Reem Kufi";font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/kufi-700-latin.woff2) format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+</style>
+<style>
+  :root {
+    --ink: #16201b;
+    --muted: #5f6b64;
+    --ground: #eef2ee;
+    --paper: #ffffff;
+    --olive: #2f5d3a;
+    --olive-deep: #23472c;
+    --line: #d5ddd7;
+    --stamp: #c0392b;
+    --bad: #b42318;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--ground); color: var(--ink); font: 400 18px/1.75 "IBM Plex Sans Arabic", system-ui, sans-serif; }
+  a { color: var(--olive); }
+  :focus-visible { outline: 3px solid var(--olive); outline-offset: 3px; border-radius: 6px; }
+  .wrap { width: min(1120px, 100% - 32px); margin-inline: auto; }
+  h1, h2, h3 { font-family: "Reem Kufi", "IBM Plex Sans Arabic", sans-serif; font-weight: 700; line-height: 1.15; margin: 0; }
+  h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 18px; }
+  h3 { font-size: 22px; margin-bottom: 6px; }
+  p { margin: 0; }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 0; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-family: "Reem Kufi", sans-serif; font-size: 26px; font-weight: 700; }
+  .brand img { width: 40px; height: 40px; border-radius: 10px; }
+  .top nav { display: flex; gap: 20px; font-size: 16px; }
+  .top nav a { color: var(--ink); text-decoration: none; }
+  .top nav a:hover { color: var(--olive); }
+  .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; padding: 32px 0 72px; }
+  .hero h1 { font-size: clamp(44px, 7vw, 78px); }
+  .lead { font-size: clamp(19px, 2.2vw, 22px); color: var(--muted); margin-top: 18px; max-width: 36ch; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--olive); color: #fff; text-decoration: none; font: inherit; font-weight: 600; font-size: 20px; line-height: 1.4; padding: 16px 30px; border: 0; border-radius: 14px; box-shadow: 0 6px 0 var(--olive-deep); cursor: pointer; transition: transform .12s, box-shadow .12s; }
+  .btn:hover { background: var(--olive-deep); }
+  .btn:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--olive-deep); }
+  .btn[disabled] { opacity: .6; cursor: progress; }
+  .hero .btn { margin-top: 30px; }
+  /* the certificate: the one loud thing on the page */
+  .cert { position: relative; background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 34px 30px 82px; box-shadow: 0 22px 40px rgba(22, 32, 27, .14); outline: 2px solid var(--line); outline-offset: -12px; text-align: center; max-width: 400px; margin-inline: auto; }
+  .cert small { display: block; color: var(--muted); font-size: 14px; }
+  .cert b { display: block; font: 700 34px/1.3 "Reem Kufi", sans-serif; margin: 8px 0 4px; }
+  .cert .who { border-bottom: 2px dotted var(--line); margin: 18px 20px 6px; height: 34px; }
+  .cert ul { list-style: none; padding: 0; margin: 18px 0 0; text-align: start; font-size: 15px; }
+  .cert li { display: flex; gap: 8px; padding: 3px 0; }
+  .cert li::before { content: "✓"; color: var(--olive); font-weight: 600; }
+  .stamp { position: absolute; left: 14px; bottom: 16px; transform: rotate(-12deg); border: 4px solid var(--stamp); color: var(--stamp); border-radius: 10px; padding: 0 12px; font: 700 26px/1.3 "Reem Kufi", sans-serif; opacity: .9; animation: stamp .35s cubic-bezier(.2, 1.6, .4, 1) .6s both; }
+  @keyframes stamp { from { opacity: 0; transform: rotate(-12deg) scale(1.8); } to { opacity: .9; transform: rotate(-12deg) scale(1); } }
+  section { padding: 64px 0; }
+  .band { background: var(--paper); border-block: 1px solid var(--line); }
+  .sub { color: var(--muted); font-size: 17px; max-width: 62ch; margin-bottom: 28px; }
+  .gains { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .gains div { border-top: 3px solid var(--olive); padding-top: 14px; }
+  .gains p { color: var(--muted); font-size: 16px; }
+  .steps { counter-reset: s; list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; max-width: 760px; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: 48px 1fr; gap: 14px; align-items: start; }
+  .steps li::before { content: counter(s); display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--olive); color: #fff; font: 700 20px/1 "Reem Kufi", sans-serif; }
+  .steps p { color: var(--muted); font-size: 16px; }
+  .rules { max-width: 760px; padding-inline-start: 22px; margin: 0; }
+  .rules li { margin: 8px 0; }
+  .rules li::marker { color: var(--olive); }
+  .note { margin-top: 22px; max-width: 760px; background: #fff8e6; border: 1px solid #eedcab; border-radius: 10px; padding: 14px 18px; font-size: 16px; }
+  .empty { background: var(--paper); border: 2px dashed var(--line); border-radius: 14px; padding: 26px; color: var(--muted); max-width: 760px; }
+  /* the form */
+  form { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 26px; max-width: 760px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px 20px; box-shadow: 0 10px 24px rgba(22, 32, 27, .06); }
+  label { display: grid; gap: 6px; font-weight: 600; font-size: 16px; }
+  label .opt { font-weight: 400; color: var(--muted); }
+  .wide { grid-column: 1 / -1; }
+  input, select, textarea { font: inherit; font-size: 17px; line-height: 1.5; color: var(--ink); background: #fff; border: 1.5px solid var(--line); border-radius: 10px; padding: 11px 14px; width: 100%; }
+  input:focus, select:focus, textarea:focus { border-color: var(--olive); outline: 2px solid rgba(47, 93, 58, .25); }
+  input[type="tel"] { direction: ltr; text-align: right; }
+  textarea { min-height: 96px; resize: vertical; }
+  .hp { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .privacy { font-size: 14px; color: var(--muted); }
+  .result { font-weight: 600; }
+  .result.bad { color: var(--bad); }
+  .done { background: var(--paper); border: 2px solid var(--olive); border-radius: 14px; padding: 26px; max-width: 760px; }
+  .done h3 { color: var(--olive-deep); }
+  footer { padding: 28px 0 40px; font-size: 14px; color: var(--muted); }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; }
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; gap: 40px; padding-bottom: 56px; }
+    .gains { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .top nav { display: none; }
+    form { grid-template-columns: 1fr; padding: 20px 16px; }
+    .hero .btn { width: 100%; }
+    section { padding: 48px 0; }
+  }
+</style>
+</head>
+<body>
+  <header class="wrap top">
+    <a class="brand" href="https://sirobusiness.com/"><img src="/img/apple-touch-icon.png" alt="">سيرو</a>
+    <nav aria-label="روابط الصفحة"><a href="#test">الاختبار</a><a href="#list">المحاسبون</a><a href="#apply">قدّم طلبك</a></nav>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <div>
+        <h1>محاسب سيرو</h1>
+        <p class="lead">للمحاسبين الذين يمسكون حسابات المحلات والمعامل والشركات: اجتز اختبار سيرو العملي على ملف شركة حقيقي، ونعرّف بك أصحاب الشركات في مدينتك.</p>
+        <a class="btn" href="#apply">قدّم طلبك</a>
+      </div>
+      <div class="cert" aria-hidden="true">
+        <small>سيرو يشهد أن</small>
+        <div class="who"></div>
+        <small>اجتاز الاختبار العملي فصار</small>
+        <b>محاسب سيرو</b>
+        <ul>
+          <li>فواتير بالليرة والدولار ومرتجعات</li>
+          <li>قبض ودفع وتسوية الصناديق</li>
+          <li>مخزون وجرد وتكلفة</li>
+          <li>تصحيح الأخطاء وإقفال الفترات</li>
+        </ul>
+        <span class="stamp">نجح</span>
+      </div>
+    </div>
+
+    <section class="band">
+      <div class="wrap">
+        <h2>ماذا تكسب</h2>
+        <div class="gains">
+          <div><h3>زبائن جدد</h3><p>اسمك ومدينتك ورقمك في قائمة محاسبي سيرو على هذه الصفحة، يجدك فيها كل صاحب شركة يبحث عمن يمسك حساباته على سيرو.</p></div>
+          <div><h3>أتعابك كاملة لك</h3><p>سيرو مجاني بالكامل، بلا اشتراك ولا تفعيل، فلا يدفع زبونك شيئاً للبرنامج، وتبقى أتعابك لك.</p></div>
+          <div><h3>خط مباشر معنا</h3><p>أسئلتك وأسئلة زبائنك تصل فريق سيرو مباشرة، وما تطلبه للبرنامج نسمعه منك أولاً.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="test">
+      <div class="wrap">
+        <h2>كيف يجري الاختبار</h2>
+        <p class="sub">لا أسئلة حفظ: الاختبار شغل حقيقي على البرنامج، كما تعمل عند زبائنك. وكل ما تحتاجه مشروح في <a href="https://sirobusiness.com/guide/">دليل سيرو</a>.</p>
+        <ol class="steps">
+          <li><div><h3>تقدّم طلبك</h3><p>من النموذج في آخر هذه الصفحة.</p></div></li>
+          <li><div><h3>يصلك ملف الاختبار</h3><p>نرسل لك على واتساب ملف شركة تجريبية ومهام مكتوبة: فواتير بالليرة والدولار، مرتجع، سندات قبض ودفع، تصحيح خطأ، جرد، وإقفال فترة.</p></div></li>
+          <li><div><h3>تنفّذ المهام وترسل النسخة</h3><p>على سيرو في جهازك، بوقتك، ثم ترسل لنا النسخة الاحتياطية من الملف.</p></div></li>
+          <li><div><h3>نراجع الدفاتر نفسها</h3><p>الأرصدة والمخزون والأرباح كما يجب أن تكون. تصلك النتيجة، ومن ينجح يظهر اسمه في القائمة.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <h2>الشروط</h2>
+        <ul class="rules">
+          <li>الصفة صالحة سنة من يوم النجاح، ثم اختبار قصير على ما تغيّر في البرنامج خلالها.</li>
+          <li>يظهر اسمك في القائمة بموافقتك، وتطلب إزالته متى شئت.</li>
+          <li>لسيرو أن يسحب الصفة ممن يتبيّن أنه أفسد حسابات زبون أو أساء استعمال اسم سيرو.</li>
+        </ul>
+        <p class="note">«محاسب سيرو» شهادة من سيرو بأنك تعرف البرنامج وتستعمله صحيحاً. ليست لقباً مهنياً ولا ترخيصاً رسمياً، ولا تغني عن ترخيص مزاولة المحاسبة حيث يلزم.</p>
+      </div>
+    </section>
+
+    <section id="list">
+      <div class="wrap">
+        <h2>محاسبو سيرو</h2>
+        <p class="empty">تُفتح القائمة مع أول من يجتاز الاختبار. صاحب شركة وتبحث عن محاسب يعمل على سيرو؟ عد إلى هذه الصفحة قريباً.</p>
+      </div>
+    </section>
+
+    <section class="band" id="apply">
+      <div class="wrap">
+        <h2>قدّم طلبك</h2>
+        <p class="sub">املأ النموذج ونراسلك على واتساب بملف الاختبار.</p>
+        <form id="form" novalidate>
+          <label>الاسم الكامل<input name="name" autocomplete="name" required maxlength="80"></label>
+          <label>المدينة<input name="city" list="cities" autocomplete="address-level2" required maxlength="40"></label>
+          <datalist id="cities"><option>دمشق</option><option>ريف دمشق</option><option>حلب</option><option>حمص</option><option>حماة</option><option>اللاذقية</option><option>طرطوس</option><option>إدلب</option><option>درعا</option><option>السويداء</option><option>القنيطرة</option><option>دير الزور</option><option>الرقة</option><option>الحسكة</option></datalist>
+          <label>رقم واتساب<input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="0991234567" required maxlength="30"></label>
+          <label>طبيعة عملك<select name="work"><option>مكتب محاسبة</option><option>محاسب مستقل</option><option>محاسب في شركة</option><option>طالب أو خريج جديد</option></select></label>
+          <label>كم شركة أو محل تمسك حساباته الآن؟ <span class="opt">(اختياري)</span><input name="clients" type="number" inputmode="numeric" min="0" max="10000"></label>
+          <label>هل استعملت سيرو من قبل؟<select name="used"><option>نعم، مع زبائن</option><option>جرّبته</option><option>لا، بعد</option></select></label>
+          <label class="wide">كلمة عنك <span class="opt">(اختياري)</span><textarea name="about" maxlength="600" placeholder="خبرتك، البرامج التي عملت عليها، أنواع الشركات التي تمسك حساباتها"></textarea></label>
+          <label class="hp" aria-hidden="true">اتركه فارغاً<input name="website" tabindex="-1" autocomplete="off"></label>
+          <p class="privacy wide">يصل طلبك إلى فريق سيرو وحده، ونستعمل رقمك للتواصل معك بخصوص الاختبار فقط. لا يُنشر اسمك ولا رقمك إلا بعد نجاحك وبموافقتك.</p>
+          <div class="wide"><button class="btn" type="submit">أرسل الطلب</button></div>
+          <p class="result wide" id="result" role="status" aria-live="polite"></p>
+        </form>
+        <div class="done" id="done" hidden>
+          <h3>وصل طلبك</h3>
+          <p>نراسلك على واتساب بملف الاختبار ومهامه. حتى ذلك الحين، <a href="https://sirobusiness.com/guide/">دليل سيرو</a> هو كل ما تحتاج مراجعته.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Habrah LLC · <a href="https://sirobusiness.com/">سيرو</a> · <a href="https://sirobusiness.com/privacy.html">الخصوصية</a></span>
+      <span>سؤال؟ <a href="mailto:anas@habrah.co?subject=%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%20%D8%B3%D9%8A%D8%B1%D9%88"><span dir="ltr">anas@habrah.co</span></a></span>
+    </div>
+  </footer>
+
+<script>
+  // the request goes to the support server (Traefik sends this host's /api/apply there); its own words come back on a refusal
+  const form = document.getElementById("form"), result = document.getElementById("result"), button = form.querySelector("button");
+  const say = (text, bad) => { result.textContent = text; result.classList.toggle("bad", !!bad); };
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form));
+    const missing = [["name", "اكتب اسمك الكامل"], ["city", "اكتب مدينتك"], ["phone", "اكتب رقم واتساب"]].find(([k]) => !String(data[k] || "").trim());
+    if (missing) { say(missing[1], true); form.elements[missing[0]].focus(); return; }
+    button.disabled = true; say("يُرسل…");
+    try {
+      const r = await fetch("/api/apply", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(data) });
+      const body = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(body.error || "لم يصل الطلب (" + r.status + "). جرّب بعد قليل، أو راسلنا على anas@habrah.co");
+      form.hidden = true; document.getElementById("done").hidden = false;
+    } catch (err) {
+      say(err instanceof TypeError ? "لم يصل الطلب: تأكد من الاتصال بالإنترنت وجرّب ثانية." : err.message, true);
+      button.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>
