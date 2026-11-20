@@ -76,7 +76,9 @@
   .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
   .card { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 8px 20px rgba(22, 32, 27, .05); }
   .card .where { color: var(--muted); font-size: 15px; }
-  .card .about { font-size: 16px; }
+  .card .about { font-size: 16px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; line-clamp: 4; overflow: hidden; }
+  .card .about.open { display: block; }
+  .card .more { align-self: flex-start; background: none; border: 0; padding: 0; color: var(--olive-deep); font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
   .card .since { color: var(--muted); font-size: 13px; margin-top: auto; }
   .card .links { display: flex; flex-wrap: wrap; gap: 8px; }
   .card .links a { font-size: 14px; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; text-decoration: none; color: var(--olive-deep); }
@@ -288,6 +290,13 @@
       for (const [k, label] of LINKS) if (p.links && p.links[k]) links.append(el("a", { href: p.links[k], target: "_blank", rel: "noopener nofollow ugc" }, label));
       c.append(links, el("p", { class: "since" }, "اجتاز الاختبار في " + new Date(p.since + "-01T12:00:00").toLocaleDateString("ar-SY-u-nu-latn", { year: "numeric", month: "long" })));
       cards.append(c);
+      // a long description shows four lines and «المزيد» opens the rest
+      const about = c.querySelector(".about");
+      if (about && about.scrollHeight > about.clientHeight + 2) {
+        const more = el("button", { type: "button", class: "more", "aria-expanded": "false" }, "المزيد");
+        more.addEventListener("click", () => { const open = about.classList.toggle("open"); more.textContent = open ? "أقل" : "المزيد"; more.setAttribute("aria-expanded", String(open)); });
+        about.after(more);
+      }
     }
     $("empty").hidden = people.length > 0;
   }
