@@ -183,6 +183,7 @@
           <label class="check"><input type="checkbox" id="me-publish"><span>أظهر اسمي ومدينتي ورقم واتساب وروابطي في قائمة محاسبي سيرو</span></label>
           <p class="privacy" id="me-until"></p>
         </div>
+        <div class="panel" id="me-card"><h3>بطاقتك</h3><p class="privacy">اسمك ومدينتك ونبذتك وروابطك كما تظهر في القائمة حين تنجح.</p><button class="btn ghost small" type="button" id="me-edit" style="margin-top:10px">عدّل بطاقتك</button><p class="msg good" id="me-card-msg" role="status" aria-live="polite"></p></div>
         <div class="panel" id="me-retake" hidden><p id="me-retake-text"></p><button class="btn small" type="button" id="me-retake-btn" style="margin-top:10px">اطلب اختباراً جديداً</button></div>
       </div>
     </section>
@@ -225,7 +226,7 @@
 
     <section class="band" id="apply">
       <div class="wrap">
-        <h2>قدّم للاختبار</h2>
+        <h2 id="apply-title">قدّم للاختبار</h2>
         <p class="sub">ما تكتبه هنا يظهر في بطاقتك في القائمة حين تنجح، إن وافقت.</p>
         <form id="form" novalidate>
           <label>الاسم الكامل<input name="name" autocomplete="name" required maxlength="80"></label>
@@ -246,7 +247,7 @@
           <label class="check wide"><input type="checkbox" name="publish" checked><span>حين أنجح، أظهر اسمي ومدينتي ورقم واتساب وروابطي ونبذتي في قائمة محاسبي سيرو (تلغيه من صفحتك متى شئت)</span></label>
           <label class="hp" aria-hidden="true">اتركه فارغاً<input name="fax" tabindex="-1" autocomplete="off"></label>
           <p class="privacy wide">يُحفظ طلبك عند فريق سيرو. لا يُنشر شيء منه قبل نجاحك، ولا بعده إن لم توافق.</p>
-          <div class="wide"><button class="btn" type="submit">قدّم وافتح صفحتي</button></div>
+          <div class="wide"><button class="btn" type="submit">قدّم وافتح صفحتي</button> <button class="btn ghost" type="button" id="edit-cancel" hidden>إلغاء</button></div>
           <p class="msg wide" id="msg" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -310,7 +311,9 @@
 
   // his own page
   let key = new URLSearchParams(location.search).get("k") || store.get();
+  let mine = null;
   function show(me) {
+    mine = me; editing(false);
     $("me").hidden = false; $("apply").hidden = true;
     $("me-title").textContent = "صفحتك، " + me.name;
     const link = location.origin + "/?k=" + key;
@@ -371,12 +374,41 @@
     b.disabled = false;
   });
 
-  // applying
+  // applying, and «عدّل بطاقتك»: the same form, filled with his card; the number stays (it finds a lost link again)
   const form = $("form"), msg = $("msg"), button = form.querySelector("button");
+  let edit = false;
+  function editing(on) {
+    edit = on;
+    $("apply-title").textContent = on ? "عدّل بطاقتك" : "قدّم للاختبار";
+    button.textContent = on ? "احفظ بطاقتك" : "قدّم وافتح صفحتي";
+    $("edit-cancel").hidden = !on;
+    form.elements.phone.readOnly = on;
+    form.elements.publish.closest("label").hidden = on;
+    msg.textContent = "";
+  }
+  $("me-edit").addEventListener("click", () => {
+    editing(true); $("me-card-msg").textContent = "";
+    for (const [k, v] of Object.entries(mine.card)) if (form.elements[k] && k !== "publish") form.elements[k].value = v ?? "";
+    $("apply").hidden = false;
+    $("apply").scrollIntoView({ behavior: "smooth" });
+  });
+  $("edit-cancel").addEventListener("click", () => { show(mine); $("me-card").scrollIntoView({ behavior: "smooth", block: "center" }); });
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(form));
     data.publish = form.elements.publish.checked;
+    if (edit) {
+      if (!String(data.name || "").trim() || !String(data.city || "").trim()) { msg.textContent = "اكتب اسمك ومدينتك"; msg.className = "msg wide bad"; return; }
+      button.disabled = true; msg.textContent = "يُحفظ…"; msg.className = "msg wide";
+      try {
+        show(await api("edit?k=" + encodeURIComponent(key), { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(data) }));
+        $("me-card-msg").textContent = "حُفظت بطاقتك.";
+        $("me-card").scrollIntoView({ behavior: "smooth", block: "center" });
+        api("list").then((list) => { people = list; draw(); }).catch(() => {});
+      } catch (err) { msg.textContent = err.message; msg.className = "msg wide bad"; }
+      button.disabled = false;
+      return;
+    }
     const missing = [["name", "اكتب اسمك الكامل"], ["phone", "اكتب رقم واتساب"], ["city", "اكتب مدينتك"]].find(([k]) => !String(data[k] || "").trim());
     if (missing) { msg.textContent = missing[1]; msg.className = "msg wide bad"; form.elements[missing[0]].focus(); return; }
     button.disabled = true; msg.textContent = "يُرسل…"; msg.className = "msg wide";
