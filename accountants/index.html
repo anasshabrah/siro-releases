@@ -101,6 +101,9 @@
   fieldset { border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px 16px; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
   legend { font-weight: 600; padding: 0 6px; }
   input, select, textarea { font: inherit; font-size: 17px; line-height: 1.5; color: var(--ink); background: #fff; border: 1.5px solid var(--line); border-radius: 10px; padding: 10px 14px; width: 100%; }
+  /* the browser's own arrow sat against the border: our own chevron, 14px in from the edge, the text kept clear of it */
+  select { -webkit-appearance: none; appearance: none; padding-inline-end: 40px; cursor: pointer; background-repeat: no-repeat; background-size: 12px 8px; background-position: left 14px center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%235f6b64' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
   input:focus, select:focus, textarea:focus { border-color: var(--olive); outline: 2px solid rgba(47, 93, 58, .25); }
   input[type="tel"], input[type="url"], .ltr { direction: ltr; text-align: right; }
   textarea { min-height: 90px; resize: vertical; }
