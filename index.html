@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <script>/* the site moved: old github.io links land on the same page at sirobusiness.com */if(location.hostname.endsWith("github.io"))location.replace("https://sirobusiness.com"+location.pathname.replace(/^\/siro-releases/,"")+location.search+location.hash)</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>/* which download fits this device (copy in Siro's scripts/help.mjs): `handheld` a phone, tablet or Chromebook (an iPad says it is a Mac, but has touch; Android's «desktop site» says Linux, but not to userAgentData), `ios` no app for it yet, `nowin` Mac or Linux, `win` Windows 10/11 (only the .exe), `oldwin` Windows 7/8 (Chrome says «NT 10.0» there, platformVersion 0.x tells) */(()=>{const n=navigator,u=n.userAgent,d=n.userAgentData,c=document.documentElement.classList,ios=/iPhone|iPad|iPod/.test(u)||(n.platform==="MacIntel"&&n.maxTouchPoints>1);if(ios)c.add("ios");if(ios||/Android|Mobile|CrOS/i.test(u)||/Android/.test(d&&d.platform))c.add("handheld");else if(!/Windows/.test(u))c.add("nowin");else if(/Windows NT [56]\./.test(u))c.add("oldwin");else{c.add("win");if(d&&d.platform==="Windows"&&d.getHighEntropyValues)d.getHighEntropyValues(["platformVersion"]).then(v=>{if(/^0\./.test(v.platformVersion))c.replace("win","oldwin")},()=>{})}})();</script>
+<script>/* which download fits this device (copy in Siro's scripts/help.mjs): `handheld` a phone, tablet or Chromebook (an iPad says it is a Mac, but has touch; Android's «desktop site» says Linux, but not to userAgentData), `ios` an iPhone or iPad (the App Store), `nowin` Mac or Linux, `win` Windows 10/11 (only the .exe), `oldwin` Windows 7/8 (Chrome says «NT 10.0» there, platformVersion 0.x tells) */(()=>{const n=navigator,u=n.userAgent,d=n.userAgentData,c=document.documentElement.classList,ios=/iPhone|iPad|iPod/.test(u)||(n.platform==="MacIntel"&&n.maxTouchPoints>1);if(ios)c.add("ios");if(ios||/Android|Mobile|CrOS/i.test(u)||/Android/.test(d&&d.platform))c.add("handheld");else if(!/Windows/.test(u))c.add("nowin");else if(/Windows NT [56]\./.test(u))c.add("oldwin");else{c.add("win");if(d&&d.platform==="Windows"&&d.getHighEntropyValues)d.getHighEntropyValues(["platformVersion"]).then(v=>{if(/^0\./.test(v.platformVersion))c.replace("win","oldwin")},()=>{})}})();</script>
 <title>برنامج محاسبة ومخزون ونظام ERP مجاني للمحلات والمعامل والشركات في سوريا | سيرو</title>
 <meta name="description" content="سيرو برنامج محاسبة مجاني للمحلات والمعامل والمطاعم والشركات في سوريا، على ويندوز وأندرويد: مبيعات ونقطة بيع (كاشير)، مخزون ومستودعات، مشتريات وديون وتقارير، بالليرة السورية والدولار. يعمل بلا إنترنت وبياناتك تبقى عندك.">
 <link rel="canonical" href="https://sirobusiness.com/">
@@ -94,7 +94,7 @@
   .handheld #download, .handheld #meta, .nowin #download, .nowin #meta, .oldwin #download, .oldwin #meta { display: none; }
   .handheld .pc-only-note { display: block; }
   .handheld .cta .btn.ghost, .nowin .cta .btn.ghost, .oldwin .cta .btn.ghost { background: var(--olive); color: #fff; border-color: var(--olive); box-shadow: 0 6px 0 var(--olive-deep); max-width: none; }
-  /* an iPhone or iPad: Google Play is not for it either, and there is no App Store app yet */
+  /* an iPhone or iPad: Google Play is not for it; the note points to the App Store */
   .ios .cta .btn.ghost, .ios .pc-only-note { display: none; }
   .ios .ios-note, .nowin .nowin-note, .oldwin .oldwin-note { display: block; color: var(--ink); }
   @media (max-width: 520px) {
@@ -196,7 +196,7 @@
   .stores a:hover { transform: translateY(-2px); }
   .stores img { display: block; height: 40px; width: auto; }
   @media (max-width: 520px) { .stores { justify-content: center; } }
-  /* no iPhone app yet (Apple is reviewing it): the badge waits, dimmed, with no link */
+  /* (the App Store badge waited here, dimmed, until the iPhone app went live on 2026-11-19) */
   .stores .soon { position: relative; }
   .stores .soon img { opacity: .4; filter: grayscale(1); }
   .stores .soon b { position: absolute; top: -9px; inset-inline-start: -6px; background: var(--olive); color: #fff; font-size: 11px; font-weight: 600; line-height: 18px; padding: 0 8px; border-radius: 9px; }
@@ -237,7 +237,7 @@
           </a>
           <p class="meta" id="meta">ويندوز 10 أو 11 · نحو 110 ميغابايت</p>
           <p class="meta pc-only-note">نسخة ويندوز للكمبيوتر: افتح هذه الصفحة من الكمبيوتر لتحميلها.</p>
-          <p class="meta ios-note">لا يوجد تطبيق لسيرو على الآيفون والآيباد بعد. يعمل على جوال أو تابلت أندرويد من Google Play، وعلى كمبيوتر ويندوز 10 أو 11.</p>
+          <p class="meta ios-note">سيرو على الآيفون من <a href="https://apps.apple.com/app/id6825993028" rel="noopener">App Store</a>، وعلى أندرويد من Google Play، وعلى كمبيوتر ويندوز 10 أو 11.</p>
           <p class="meta nowin-note">برنامج الكمبيوتر لويندوز 10 أو 11 فقط، ولا يعمل على ماك أو لينكس: حمّل نسخة ويندوز على كمبيوتر ويندوز، أو استعمل نسخة أندرويد.</p>
           <p class="meta oldwin-note">هذا الكمبيوتر بويندوز 7 أو 8، وسيرو يحتاج ويندوز 10 أو 11 فلن يعمل عليه. حمّل نسخة ويندوز على كمبيوتر أحدث، أو استعمل نسخة أندرويد.</p>
           <p class="meta"><a id="how" href="guide/start.html#install">طريقة التثبيت</a> · <a href="guide/">المساعدة</a> · <a href="guide/new.html">ما الجديد</a></p>
@@ -381,7 +381,7 @@
       <nav class="stores" aria-label="سيرو في المتاجر">
         <a href="https://play.google.com/store/apps/details?id=com.habrah.siro" rel="noopener"><img src="img/badge-google-play.png" alt="سيرو على Google Play" width="134" height="40"></a>
         <a class="store" href="https://apps.microsoft.com/detail/XPFD8M60P1GMW0?cid=sirobusiness" rel="noopener"><img src="img/badge-microsoft-store.svg" alt="سيرو على Microsoft Store" width="146" height="40"></a>
-        <span class="soon" title="تطبيق الآيفون قريباً"><img src="img/badge-app-store.svg" alt="سيرو على App Store قريباً" width="120" height="40"><b>قريباً</b></span>
+        <a href="https://apps.apple.com/app/id6825993028" rel="noopener"><img src="img/badge-app-store.svg" alt="سيرو على App Store" width="120" height="40"></a>
       </nav>
       <span>© 2026 Habrah LLC · مجاني للاستخدام والمشاركة كما هو · <a href="terms.html">شروط الاستخدام</a> · <a href="privacy.html">الخصوصية</a> · <a href="license.html">الرخصة</a> · <a href="https://accountants.sirobusiness.com/">محاسبو سيرو</a></span>
       <span class="end"><a class="yt" href="https://www.youtube.com/@siro-sy" target="_blank" rel="noopener" title="سيرو على يوتيوب" aria-label="سيرو على يوتيوب"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .6 12a31 31 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-4.8 31 31 0 0 0-.4-4.8zM9.7 15.1V8.9l5.8 3.1z"/></svg></a><a class="yt" href="https://www.facebook.com/siro.business" target="_blank" rel="noopener" title="سيرو على فيسبوك" aria-label="سيرو على فيسبوك"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg></a><span id="version"></span></span>
